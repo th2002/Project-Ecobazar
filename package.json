@@ -1,0 +1,15 @@
+{
+  "name": "project-ecobazar",
+  "version": "1.0.0",
+  "description": "Project-Shopery",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./public/output.css --watch"
+  },
+  "keywords": [],
+  "author": "trunghieu1501.top",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
