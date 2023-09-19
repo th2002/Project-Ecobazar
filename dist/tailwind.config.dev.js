@@ -1,3 +1,5 @@
+"use strict";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./public/**/*.{html,js}"],
@@ -6,8 +8,7 @@ module.exports = {
       fontFamily: {
         Poppins: ['poppins', 'sans-serif']
       }
-    },
+    }
   },
-  plugins: [],
-}
-
+  plugins: []
+};
