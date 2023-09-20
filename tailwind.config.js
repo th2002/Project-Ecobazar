@@ -11,12 +11,16 @@ module.exports = {
           600: '#666666',
           700: '#4D4D4D',
           800: '#333',
+          900: '#1A1A1A',
         },
         'success': '#00B207',
       },
       fontFamily: {
         Poppins: ['poppins', 'sans-serif']
-      }
+      },
+      backgroundImage: {
+        'banner': 'url("./images/banners/Banner.png")',
+      },
     },
   },
   plugins: [],
