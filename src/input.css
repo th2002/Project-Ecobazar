@@ -2,3 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tw-menu-items {
+    @apply flex justify-center items-center basis-2/6 hover:text-content-800
+    relative py-1 after:bg-success after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
+    hover:after:w-full after:transition-all after:ease-linear after:duration-300;
+}
