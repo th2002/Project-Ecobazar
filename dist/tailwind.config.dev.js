@@ -15,7 +15,8 @@ module.exports = {
           800: '#333',
           900: '#1A1A1A'
         },
-        'success': '#00B207'
+        'success': '#00B207',
+        'success-dark': '#2C742F'
       },
       fontFamily: {
         Poppins: ['poppins', 'sans-serif']
