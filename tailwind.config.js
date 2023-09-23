@@ -17,7 +17,8 @@ module.exports = {
         'success-dark': '#2C742F',
       },
       fontFamily: {
-        Poppins: ['poppins', 'sans-serif']
+        Poppins: ['poppins', 'sans-serif'],
+        Pacifico: ['Pacifico', 'sans-serif'],
       },
       backgroundImage: {
         'banner': 'url("./images/banners/Banner.png")',
