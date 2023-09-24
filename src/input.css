@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .tw-menu-items {
-    @apply flex justify-center items-center basis-2/6 hover:text-content-800
+    @apply flex justify-center items-center basis-2/6 hover:text-content-800 cursor-pointer
     relative py-1 after:bg-success after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
+    hover:after:w-full after:transition-all after:ease-linear after:duration-300;
+}
+
+.featured-items {
+    @apply flex items-center justify-center gap-4 mb-20 flex-col basis-1/4 py-10 cursor-pointer border-b-[1px] border-content-400
+    relative after:absolute after:bg-success after:bottom-0 after:left-0 after:w-0 after:h-1
     hover:after:w-full after:transition-all after:ease-linear after:duration-300;
 }
