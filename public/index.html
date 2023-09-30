@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' trusted-site.com;">
     <title>Organic eCommerce</title>
     <link rel="shortcut icon" href="./images/favicon/favicon-shop.png" type="image/x-icon">
     <link rel="stylesheet" href="./output.css">
@@ -14,7 +15,7 @@
     <div id="root">
         <div class="w-full text-base content-warpper font-Poppins">
             <header>
-                <div class="py-3 mb-px shadow-lg bg-content-800 Small-one">
+                <div class="fixed top-0 left-0 right-0 z-40 py-3 shadow-lg bg-content-800 Small-one">
                     <div class="flex flex-row items-center px-[200px]">
                         <div class="flex basis-3/4">
                             <div class="flex items-center justify-star basis-full">
@@ -79,7 +80,7 @@
                     </div>
                 </div>
 
-                <div class="Middle">
+                <div class="Middle mt-[44px]">
                     <div class="flex flex-row bg-[#EDF2EE] py-7 px-[200px]">
                         <div class="flex items-center justify-start basis-1/6">
                             <svg class="cursor-pointer" width="150" height="39" viewBox="0 0 183 39" fill="none"
@@ -160,9 +161,7 @@
                 </div>
 
                 <nav>
-                    <div
-                        class="flex flex-row items-center py-4 text-sm font-medium Nav-links shadow-neutral-200 text-content-600">
-                        <div class="flex w-full items-center mx-[200px]">
+                    <div class="nav-header">
                             <div class="flex basis-7/12">
                                 <ul class="flex items-center justify-between w-full gap-4">
                                     <li class="tw-menu-items ">
@@ -205,6 +204,7 @@
                                     </li>
                                 </ul>
                             </div>
+
                             <div class="flex items-center justify-end basis-5/12">
                                 <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
                                     viewBox="0 0 28 28" fill="none">
@@ -225,14 +225,12 @@
                                     <p>(219) 555-0114</p>
                                 </address>
                             </div>
-                        </div>
                     </div>
                 </nav>
             </header>
 
             <main>
                 <div class="banner-marketing">
-                    <div class="flex relative bg-banner bg-cover bg-no-repeat bg-center h-[600px] mb-4">
                         <div class="absolute flex w-full h-full bg-gray-600 opacity-10"> </div>
                         <img class="absolute top-1/2 -translate-y-1/2 left-[200px] h-96"
                             src="./images/banners/Image.png" alt="banner">
@@ -268,7 +266,6 @@
                                 </svg>
                             </button>
                         </div>
-                    </div>
                 </div>
 
                 <div class="featured">
@@ -312,8 +309,8 @@
                     </div>
                 </div>
 
-                <div class="mb-16 featured-products">
-                    <div class="flex items-center justify-between mx-[200px] mb-8">
+                <div id="featureScoll" class="mb-16 featured-products">
+                    <div class="featured-products-header">
                         <h1 class="inline-block text-4xl font-semibold">Featured Products</h1>
                         <div>
                             <a class="inline-block font-medium text-success" href="#">View all</a>
@@ -327,26 +324,25 @@
                         </div>
                     </div>
 
-                    <div class="mx-[200px]">
+                    <div id="srcollProduct" class="mx-[200px]">
                         <div class="grid grid-cols-4 gap-8">
-                            <div
-                                class="relative overflow-hidden group transition-all ease-linear duration-200 shadow-lg hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark rounded-lg border h-[350px]">
+                            <div class="card-product group">
                                 <div class="absolute justify-center h-[246px]">
-                                    <a href="#"><img class="w-full" src="./images/products/apple.png" alt="Apple"></a>
+                                    <a href="#"><img loading="lazy" class="w-full" src="./images/products/apple.png" alt="Apple"></a>
                                 </div>
                                 <div
                                     class="absolute items-center px-2 py-1 justify-center text-white text-sm bg-red-500 rounded-[4px] top-3 left-3">
                                     <span class="w-16 h-5">Sale 50%</span>
                                 </div>
                                 <div class="hidden animate-fadeIn group-hover:flex flex-col gap-2 absolute w-10 h-[86px] right-3 top-3">
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg class="group hover:fill-red-600  xmlns=" http:="" www.w3.org="" 2000="" svg"="" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path class="group-hover:stroke-red-600" d="M9.9996 17.5451C-6.66672 8.3333 4.99993 -1.6667 9.9996 4.65668C14.9999 -1.6667 26.6666 8.3333 9.9996 17.5451Z" stroke="#1A1A1A" stroke-width="1.5"></path>
                                             </svg>
                                         </a>
                                     </div>
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -396,34 +392,33 @@
                                             fill="#CCCCCC" />
                                     </svg>
                                 </div>
-                                <div class="absolute justify-center items-center w-10 h-10 top-[280px] right-5">
-                                    <div
-                                        class="flex items-center group-hover:bg-success transition-all ease-linear duration-200 group-hover:text-white bg-[#F2F2F2] justify-center w-full h-full rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
-                                            viewBox="0 0 20 21" fill="none">
-                                            <path
-                                                class="transition-all duration-200 ease-linear group-hover:stroke-white"
-                                                d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
-                                                stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
+                                <div class="add-card group/add-card">
+                                    <a href="#" class="add-card-items group-hover/add-card:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <path
+                                                    class="transition-all duration-200 ease-linear group-hover/add-card:stroke-white"
+                                                    d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+                                                    stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                    </a>
                                 </div>
                             </div>
-                            <div
-                                class="relative overflow-hidden group transition-all ease-linear duration-200 hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark rounded-lg border h-[350px]">
+
+                            <div class="card-product group">
                                 <div class="absolute justify-center h-[302px]">
                                     <a href="#"><img class="w-full" src="./images/products/vegetable.png" alt="vegetable"></a>
                                 </div>
                                 <div class="hidden animate-fadeIn group-hover:flex flex-col gap-2 absolute w-10 h-[86px] right-3 top-3">
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg class="group hover:fill-red-600  xmlns=" http:="" www.w3.org="" 2000="" svg"="" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path class="group-hover:stroke-red-600" d="M9.9996 17.5451C-6.66672 8.3333 4.99993 -1.6667 9.9996 4.65668C14.9999 -1.6667 26.6666 8.3333 9.9996 17.5451Z" stroke="#1A1A1A" stroke-width="1.5"></path>
                                             </svg>
                                         </a>
                                     </div>
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -472,34 +467,33 @@
                                             fill="#CCCCCC" />
                                     </svg>
                                 </div>
-                                <div class="absolute justify-center items-center w-10 h-10 top-[280px] right-5">
-                                    <div
-                                        class="flex items-center group-hover:bg-success transition-all ease-linear duration-200 group-hover:text-white bg-[#F2F2F2] justify-center w-full h-full rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
-                                            viewBox="0 0 20 21" fill="none">
-                                            <path
-                                                class="transition-all duration-200 ease-linear group-hover:stroke-white"
-                                                d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
-                                                stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
+                                <div class="add-card group/add-card">
+                                    <a href="#" class="add-card-items group-hover/add-card:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <path
+                                                    class="transition-all duration-200 ease-linear group-hover/add-card:stroke-white"
+                                                    d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+                                                    stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                    </a>
                                 </div>
                             </div>
-                            <div
-                                class="relative overflow-hidden group hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark transition-all ease-linear duration-200 rounded-lg border h-[350px]">
+
+                            <div class="card-product group">
                                 <div class="absolute justify-center h-[302px]">
                                     <a href="#"><img class="w-full" src="./images/products/vegetable-2.png" alt="vegetable"></a>
                                 </div>
                                 <div class="hidden animate-fadeIn group-hover:flex flex-col gap-2 absolute w-10 h-[86px] right-3 top-3">
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg class="group hover:fill-red-600  xmlns=" http:="" www.w3.org="" 2000="" svg"="" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path class="group-hover:stroke-red-600" d="M9.9996 17.5451C-6.66672 8.3333 4.99993 -1.6667 9.9996 4.65668C14.9999 -1.6667 26.6666 8.3333 9.9996 17.5451Z" stroke="#1A1A1A" stroke-width="1.5"></path>
                                             </svg>
                                         </a>
                                     </div>
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -547,34 +541,33 @@
                                             fill="#CCCCCC" />
                                     </svg>
                                 </div>
-                                <div class="absolute justify-center items-center w-10 h-10 top-[280px] right-5">
-                                    <div
-                                        class="flex items-center group-hover:bg-success transition-all ease-linear duration-200 group-hover:text-white bg-[#F2F2F2] justify-center w-full h-full rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
-                                            viewBox="0 0 20 21" fill="none">
-                                            <path
-                                                class="transition-all duration-200 ease-linear group-hover:stroke-white"
-                                                d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
-                                                stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
+                                <div class="add-card group/add-card">
+                                    <a href="#" class="add-card-items group-hover/add-card:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <path
+                                                    class="transition-all duration-200 ease-linear group-hover/add-card:stroke-white"
+                                                    d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+                                                    stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                    </a>
                                 </div>
                             </div>
-                            <div
-                                class="relative overflow-hidden group transition-all ease-linear duration-200 hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark rounded-lg border h-[350px]">
+
+                            <div class="card-product group">
                                 <div class="absolute justify-center h-[302px]">
                                     <a href="#"><img class="w-full" src="./images/products/vegetable-3.png" alt="finger"></a>
                                 </div>
                                 <div class="hidden animate-fadeIn group-hover:flex flex-col gap-2 absolute w-10 h-[86px] right-3 top-3">
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg class="group hover:fill-red-600  xmlns=" http:="" www.w3.org="" 2000="" svg"="" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path class="group-hover:stroke-red-600" d="M9.9996 17.5451C-6.66672 8.3333 4.99993 -1.6667 9.9996 4.65668C14.9999 -1.6667 26.6666 8.3333 9.9996 17.5451Z" stroke="#1A1A1A" stroke-width="1.5"></path>
                                             </svg>
                                         </a>
                                     </div>
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -623,27 +616,25 @@
                                             fill="#CCCCCC" />
                                     </svg>
                                 </div>
-                                <div class="absolute justify-center items-center w-10 h-10 top-[280px] right-5">
-                                    <div
-                                        class="flex items-center group-hover:bg-success transition-all ease-linear duration-200 group-hover:text-white bg-[#F2F2F2] justify-center w-full h-full rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
-                                            viewBox="0 0 20 21" fill="none">
-                                            <path
-                                                class="transition-all duration-200 ease-linear group-hover:stroke-white"
-                                                d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
-                                                stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
+                                <div class="add-card group/add-card">
+                                    <a href="#" class="add-card-items group-hover/add-card:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <path
+                                                    class="transition-all duration-200 ease-linear group-hover/add-card:stroke-white"
+                                                    d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+                                                    stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div
-                    class="shop-categories mt-24 bg-cover bg-center bg-no-repeat bg-[url('./images/background/cate.png')] bg-[#EDF2EE]">
-                    <div class="flex items-center justify-between mx-[200px] pt-20 mb-16">
+                <div class="shop-categories">
+                    <div class="shop-categories-header">
                         <h1 class="inline-block text-4xl font-semibold">Shop by Top Categories</h1>
                         <div>
                             <a class="inline-block font-medium text-success" href="#">View all</a>
@@ -658,8 +649,7 @@
                     </div>
                     <div class="flex items-center justify-center pb-28 ">
                         <div class="grid grid-cols-5 gap-8 mx-[200px]">
-                            <div
-                                class="relative group cursor-pointer hover:border-success transition-all ease-linear duration-200 justify-center w-[200px] h-[200px] bg-white rounded-[6px] border">
+                            <a href="#" class="shop-categories-card group">
                                 <svg class="absolute w-full top-8" xmlns="http://www.w3.org/2000/svg" width="80"
                                     height="80" viewBox="0 0 80 80" fill="none">
                                     <path
@@ -711,9 +701,9 @@
                                 <div class="absolute w-full top-[162px] text-center ">
                                     <span class="text-sm text-content-500">165 Products</span>
                                 </div>
-                            </div>
-                            <div
-                                class="relative justify-center group cursor-pointer hover:border-success transition-all ease-linear duration-200 w-[200px] h-[200px] bg-white rounded-[6px] border">
+                            </a>
+
+                            <a href="#" class="shop-categories-card group">
                                 <svg class="absolute w-full top-8" xmlns="http://www.w3.org/2000/svg" width="80"
                                     height="80" viewBox="0 0 80 80" fill="none">
                                     <g clip-path="url(#clip0_1990_15132)">
@@ -822,9 +812,9 @@
                                 <div class="absolute w-full top-[162px] text-center ">
                                     <span class="text-sm text-content-500">137 Products</span>
                                 </div>
-                            </div>
-                            <div
-                                class="relative justify-center group cursor-pointer hover:border-success transition-all ease-linear duration-200 w-[200px] h-[200px] bg-white rounded-[6px] border">
+                            </a>
+
+                            <a href="#" class="shop-categories-card group">
                                 <svg class="absolute w-full top-8" xmlns="http://www.w3.org/2000/svg" width="80"
                                     height="80" viewBox="0 0 80 80" fill="none">
                                     <path
@@ -931,9 +921,9 @@
                                 <div class="absolute w-full top-[162px] text-center ">
                                     <span class="text-sm text-content-500">34 Products</span>
                                 </div>
-                            </div>
-                            <div
-                                class="relative justify-center group cursor-pointer hover:border-success transition-all ease-linear duration-200 w-[200px] h-[200px] bg-white rounded-[6px] border">
+                            </a>
+
+                            <a href="#" class="shop-categories-card group">
                                 <svg class="absolute w-full top-8" xmlns="http://www.w3.org/2000/svg" width="80"
                                     height="80" viewBox="0 0 80 80" fill="none">
                                     <g clip-path="url(#clip0_622_2902)">
@@ -975,9 +965,9 @@
                                 <div class="absolute w-full top-[162px] text-center ">
                                     <span class="text-sm text-content-500">165 Products</span>
                                 </div>
-                            </div>
-                            <div
-                                class="relative justify-center group cursor-pointer hover:border-success transition-all ease-linear duration-200 w-[200px] h-[200px] bg-white rounded-[6px] border">
+                            </a>
+
+                            <a href="#" class="shop-categories-card group">
                                 <svg class="absolute w-full top-8" xmlns="http://www.w3.org/2000/svg" width="80"
                                     height="80" viewBox="0 0 80 80" fill="none">
                                     <path
@@ -1080,25 +1070,26 @@
                                 <div class="absolute w-full top-[162px] text-center ">
                                     <span class="text-sm text-content-500">48 Products</span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="why-choose-us">
-                    <div
-                        class="w-full h-[620px] bg-center bg-cover bg-no-repeat bg-[url('./images/background/catagories.png')]">
-                        <div class="grid grid-cols-6 gap-4 h-full mx-[200px]">
 
+                <div class="why-choose-us">
+                        <div class="grid grid-cols-6 gap-4 h-full mx-[200px]">
                             <div class="col-span-1 mt-20">
                                 <img src="./images/banners/Banner2.png" alt="introduce">
                             </div>
+
                             <div class="col-span-2 mt-20">
                                 <img src="./images/banners/Banner3.png" alt="introduce">
                             </div>
+
                             <div class="col-span-3 mt-20">
                                 <div>
                                     <h1 class="text-4xl text-content-900 font-semibold mb-3 leading-[48px]">100%
                                         Trusted <br> Organic Food Store</h1>
+
                                     <div class="flex items-center">
                                         <div class="relative inline-block w-6 h-6 mr-2 rounded-full bg-success">
                                             <svg class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" xmlns="http://www.w3.org/2000/svg" width="16" height="17"
@@ -1111,8 +1102,10 @@
                                             Every day fresh and quality products for you.
                                         </h2>
                                     </div>
+
                                     <p class="ml-8 text-sm text-content-500">Maecenas vehicula a justo quis laoreet. Sed in placerat nibh, a posuere ex. Morbi sem neque, aliquam sed orci et, rhoncus lobortis felis. Sed vestibulum nisl sit amet sapien.</p>
                                 </div>
+
                                 <div>
                                     <div class="flex items-center">
                                         <div class="relative inline-block w-6 h-6 mr-2 rounded-full bg-success">
@@ -1122,17 +1115,21 @@
                                                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
                                         </div>
+
                                         <h2 class="inline-block text-lg font-medium leading-10 text-content-900">
                                             Healthy & natural food for lovers of healthy food.
                                         </h2>
                                     </div>
+
                                     <p class="ml-8 text-sm text-content-500">Ut quis tempus erat. Phasellus euismod bibendum
                                         magna non tristique. Pellentesque semper vestibulum elit sed condimentum. Nunc
                                         pretium fermentum interdum.</p>
                                 </div>
+
                                 <button type="button"
                                     class="flex mt-3 text-white justify-center items-center rounded-[53px] w-[160px] h-10 py-3 px-5 bg-success text-base font-semibold ">
                                     <p class="mr-4">Shop now</p>
+
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15"
                                         fill="none">
                                         <path d="M16 7.50055H1" stroke="white" stroke-width="1.5" stroke-linecap="round"
@@ -1141,43 +1138,50 @@
                                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </button>
-                                <div></div>
                             </div>
 
                         </div>
-                    </div>
                 </div>
-                <div class="feature h-[330px] bg-cover bg-no-repeat bg-center bg-[url('./images/banners/Banner4.png')] ">
+
+                <div class="feature-banner">
                     <div class="grid grid-cols-4 gap-8 h-full py-20 mx-[200px]">
                         <div class="relative">
                             <div class="absolute w-full h-full bg-white rounded-lg opacity-5"></div>
+
                             <span class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/3 text-success text-[56px] font-light">37+</span>
+
                             <div><p class="absolute w-full text-lg text-center text-white -translate-x-1/2 top-2/3 left-1/2 -translate-y-1/3">Years of Hard Work</p></div>
                         </div>
                         
                         <div class="relative">
                             <div class="absolute w-full h-full bg-white rounded-lg opacity-5"></div>
+
                             <span class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/3 text-success text-[56px] font-light">500k+</span>
+
                             <div><p class="absolute w-full text-lg text-center text-white -translate-x-1/2 top-2/3 left-1/2 -translate-y-1/3">Happy Customer</p></div>
                         </div>
 
                         <div class="relative">
                             <div class="absolute w-full h-full bg-white rounded-lg opacity-5"></div>
+
                             <span class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/3 text-success text-[56px] font-light">28</span>
+
                             <div><p class="absolute w-full text-lg text-center text-white -translate-x-1/2 top-2/3 left-1/2 -translate-y-1/3">Qualified Team Member</p></div>
                         </div>
 
                         <div class="relative">
                             <div class="absolute w-full h-full bg-white rounded-lg opacity-5"></div>
+
                             <span class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/3 text-success text-[56px] font-light">750k+</span>
+
                             <div><p class="absolute w-full text-lg text-center text-white -translate-x-1/2 top-2/3 left-1/2 -translate-y-1/3">Monthly Orders</p></div>
                         </div>
                     </div>
                 </div>
-                <div class="bannar bg-center bg-cover bg-no-repeat bg-[url('./images/background/bannar3.png')]">
-                    <div class="h-[520px] mx-[200px]">
-                        <div class="grid items-center h-full grid-cols-2 gap-4">
-                            <div class="flex items-center w-auto h-[360px] rounded-xl bg-cover bg-center bg-no-repeat bg-[url('./images/background/bannar1.png')]">
+
+                <div class="bannar">
+                    <div class="bannar-frame">
+                            <div class="bannar-frame-items bg-[url('./images/background/bannar1.png')]">
                                 <div class="ml-10">
                                     <div class="grid grid-rows-5">
                                         <div class="flex items-center row-span-1"><p class="text-sm text-white font-medium tracking-[0.42px] uppercase">100% Organic</p></div>
@@ -1200,7 +1204,8 @@
                                 </div>
                                 
                             </div>
-                            <div class="flex items-center w-auto h-[360px] rounded-xl bg-cover bg-center bg-no-repeat bg-[url('./images/background/bannar2.png')]">
+
+                            <div class="bannar-frame-items bg-[url('./images/background/bannar2.png')]">
                                 <div class="ml-10">
                                     <div class="grid w-full grid-rows-5">
                                         <div class="flex items-center row-span-1">
@@ -1241,9 +1246,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
+
                 <div class="mb-20 best-seller-products">
                     <div class="flex items-center justify-between mx-[200px] mb-8">
                         <h1 class="inline-block text-4xl font-semibold">Best Seller Products</h1>
@@ -1261,24 +1266,24 @@
 
                     <div class="mx-[200px] mb-8">
                         <div class="grid grid-cols-4 gap-8">
-                            <div
-                                class="relative overflow-hidden group transition-all ease-linear duration-200 shadow-lg hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark rounded-lg border h-[350px]">
+                            <div class="featured-best-seller group">
                                 <div class="absolute justify-center h-[246px]">
                                     <a href="#"><img class="w-full" src="./images/products/apple.png" alt="Apple"></a>
                                 </div>
-                                <div
-                                    class="absolute items-center px-2 py-1 justify-center text-white text-sm bg-red-500 rounded-[4px] top-3 left-3">
+
+                                <div class="absolute items-center px-2 py-1 justify-center text-white text-sm bg-red-500 rounded-[4px] top-3 left-3">
                                     <span class="w-16 h-5">Sale 50%</span>
                                 </div>
+
                                 <div class="hidden animate-fadeIn group-hover:flex flex-col gap-2 absolute w-10 h-[86px] right-3 top-3">
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg class="group hover:fill-red-600  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path class="group-hover:stroke-red-600" d="M9.9996 17.5451C-6.66672 8.3333 4.99993 -1.6667 9.9996 4.65668C14.9999 -1.6667 26.6666 8.3333 9.9996 17.5451Z" stroke="#1A1A1A" stroke-width="1.5"/>
                                             </svg>
                                         </a>
                                     </div>
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1287,15 +1292,18 @@
                                         </a>
                                     </div>
                                 </div>
+
                                 <div class="absolute left-4 top-64">
                                     <span
                                         class="text-sm transition-all duration-200 ease-linear group-hover:text-success-dark text-content-700">Green
                                         Apple</span>
                                 </div>
+
                                 <div class="absolute left-4 top-[280px]">
                                     <span class="text-base font-medium">$10.00</span>
                                     <span class="text-sm line-through text-content-400">$20.00</span>
                                 </div>
+
                                 <div class="absolute left-4 top-[304px]">
                                     <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
                                         viewBox="0 0 12 13" fill="none">
@@ -1328,36 +1336,34 @@
                                             fill="#CCCCCC" />
                                     </svg>
                                 </div>
-                                <div class="absolute justify-center items-center w-10 h-10 top-[280px] right-5">
-                                    <a href="#">
-                                        <div
-                                        class="flex items-center group-hover:bg-success transition-all ease-linear duration-200 group-hover:text-white bg-[#F2F2F2] justify-center w-full h-full rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
-                                            viewBox="0 0 20 21" fill="none">
-                                            <path
-                                                class="transition-all duration-200 ease-linear group-hover:stroke-white"
-                                                d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
-                                                stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
+
+                                <div class="add-card group/add-card">
+                                    <a href="#" class="add-card-items group-hover/add-card:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <path
+                                                    class="transition-all duration-200 ease-linear group-hover/add-card:stroke-white"
+                                                    d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+                                                    stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
                                     </a>
                                 </div>
                             </div>
-                            <div
-                                class="relative overflow-hidden group transition-all ease-linear duration-200 shadow-lg hover:border-success rounded-lg border h-[350px]">
+
+                            <div class="featured-best-seller group">
                                 <div class="absolute justify-center h-[246px]">
                                     <a href="#"><img class="w-full" src="./images/products/vegetable.png" alt="vegetable"></a>
                                 </div>
                                 <div class="hidden animate-fadeIn group-hover:flex flex-col gap-2 absolute w-10 h-[86px] right-3 top-3">
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg class="group hover:fill-red-600  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path class="group-hover:stroke-red-600" d="M9.9996 17.5451C-6.66672 8.3333 4.99993 -1.6667 9.9996 4.65668C14.9999 -1.6667 26.6666 8.3333 9.9996 17.5451Z" stroke="#1A1A1A" stroke-width="1.5"/>
                                             </svg>
                                         </a>
                                     </div>
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1406,34 +1412,33 @@
                                             fill="#CCCCCC" />
                                     </svg>
                                 </div>
-                                <div class="absolute justify-center items-center w-10 h-10 top-[280px] right-5">
-                                    <div
-                                        class="flex items-center group-hover:bg-success transition-all ease-linear duration-200 group-hover:text-white bg-[#F2F2F2] justify-center w-full h-full rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
-                                            viewBox="0 0 20 21" fill="none">
-                                            <path
-                                                class="transition-all duration-200 ease-linear group-hover:stroke-white"
-                                                d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
-                                                stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
+                                <div class="add-card group/add-card">
+                                    <a href="#" class="add-card-items group-hover/add-card:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <path
+                                                    class="transition-all duration-200 ease-linear group-hover/add-card:stroke-white"
+                                                    d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+                                                    stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                    </a>
                                 </div>
                             </div>
-                            <div
-                                class="relative overflow-hidden group hover:border-success shadow-lg transition-all ease-linear duration-200 rounded-lg border h-[350px]">
+
+                            <div class="featured-best-seller group">
                                 <div class="absolute justify-center h-[246px]">
                                     <a href="#"><img class="w-full" src="./images/products/lettuce.png" alt="vegetable"></a>
                                 </div>
                                 <div class="hidden animate-fadeIn group-hover:flex flex-col gap-2 absolute w-10 h-[86px] right-3 top-3">
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg class="group hover:fill-red-600  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path class="group-hover:stroke-red-600" d="M9.9996 17.5451C-6.66672 8.3333 4.99993 -1.6667 9.9996 4.65668C14.9999 -1.6667 26.6666 8.3333 9.9996 17.5451Z" stroke="#1A1A1A" stroke-width="1.5"/>
                                             </svg>
                                         </a>
                                     </div>
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1480,34 +1485,33 @@
                                             fill="#CCCCCC" />
                                     </svg>
                                 </div>
-                                <div class="absolute justify-center items-center w-10 h-10 top-[280px] right-5">
-                                    <div
-                                        class="flex items-center group-hover:bg-success transition-all ease-linear duration-200 group-hover:text-white bg-[#F2F2F2] justify-center w-full h-full rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
-                                            viewBox="0 0 20 21" fill="none">
-                                            <path
-                                                class="transition-all duration-200 ease-linear group-hover:stroke-white"
-                                                d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
-                                                stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
+                                <div class="add-card group/add-card">
+                                    <a href="#" class="add-card-items group-hover/add-card:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <path
+                                                    class="transition-all duration-200 ease-linear group-hover/add-card:stroke-white"
+                                                    d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+                                                    stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                    </a>
                                 </div>
                             </div>
-                            <div
-                                class="relative overflow-hidden group transition-all ease-linear duration-200 shadow-lg hover:border-success rounded-lg border h-[350px]">
+
+                            <div class="featured-best-seller group">
                                 <div class="absolute justify-center h-[246px]">
                                     <a href="#"><img class="w-full" src="./images/products/chill.png" alt="chill"></a>
                                 </div>
                                 <div class="hidden animate-fadeIn group-hover:flex flex-col gap-2 absolute w-10 h-[86px] right-3 top-3">
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg class="group hover:fill-red-600  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path class="group-hover:stroke-red-600" d="M9.9996 17.5451C-6.66672 8.3333 4.99993 -1.6667 9.9996 4.65668C14.9999 -1.6667 26.6666 8.3333 9.9996 17.5451Z" stroke="#1A1A1A" stroke-width="1.5"/>
                                             </svg>
                                         </a>
                                     </div>
-                                    <div class="flex group-hover:bg-white justify-center items-center basis-1/2 w-10 h-10 rounded-full border">
+                                    <div class="flex items-center justify-center w-10 h-10 border rounded-full group-hover:bg-white basis-1/2">
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1555,18 +1559,17 @@
                                             fill="#CCCCCC" />
                                     </svg>
                                 </div>
-                                <div class="absolute justify-center items-center w-10 h-10 top-[280px] right-5">
-                                    <div
-                                        class="flex items-center group-hover:bg-success transition-all ease-linear duration-200 group-hover:text-white bg-[#F2F2F2] justify-center w-full h-full rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
-                                            viewBox="0 0 20 21" fill="none">
-                                            <path
-                                                class="transition-all duration-200 ease-linear group-hover:stroke-white"
-                                                d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
-                                                stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
+                                <div class="add-card group/add-card">
+                                    <a href="#" class="add-card-items group-hover/add-card:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <path
+                                                    class="transition-all duration-200 ease-linear group-hover/add-card:stroke-white"
+                                                    d="M6.66667 8.83333H4.16667L2.5 18H17.5L15.8333 8.83333H13.3333M6.66667 8.83333V6.33333C6.66667 4.49239 8.15905 3 10 3V3C11.8409 3 13.3333 4.49238 13.3333 6.33333V8.83333M6.66667 8.83333H13.3333M6.66667 8.83333V11.3333M13.3333 8.83333V11.3333"
+                                                    stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1574,239 +1577,243 @@
 
                     <div class="mx-[200px] h-[465.6px]">
                         <div class="grid w-full h-full grid-cols-3 gap-8">      
-                                <div class="grid w-full h-full gap-4 grid-rows-7">
-                                    <h1 class="h-0 text-2xl font-medium">Hot Deals</h1>
-                                    <div class="relative transition-all ease-linear duration-300 overflow-hidden group hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark row-span-2 border rounded-[6px]">
-                                        <a href="#"><img class="absolute left-0 h-full" src="./images/products/apple.png" alt="img-apple"></a>
-                                        <span
-                                        class="absolute text-sm transition-all duration-200 ease-linear left-32 top-6 group-hover:text-success-dark text-content-700">Green
-                                        Apple
-                                        </span>
-                                        <div class="group-hover:hidden absolute top-12 left-32">
-                                            <span class="text-base font-medium">$10.00</span>
-                                            <span class="text-sm line-through text-content-400">$20.00</span>
-                                        </div>
-                                        <div class="group-hover:hidden absolute left-32 top-[72px]">
-                                            <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#CCCCCC" />
-                                    </svg>
-                                        </div>
-                                        <div class="group-hover:flex flex-row hidden animate-fadeIn gap-3 justify-between absolute top-14 left-32">
-                                            <a href="#">
-                                                <div class="flex group/item basis-1/3 justify-center items-center w-10 h-10 border rounded-full hover:bg-success transition-all ease-linear delay-100">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item:stroke-white transition-all ease-linear delay-100" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="flex basis-1/3 group/item2 hover:bg-success transition-all ease-linear delay-100 justify-center items-center w-10 h-10 border rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="flex group/item3 hover:bg-success transition-all ease-linear delay-100 basis-1/3 justify-center items-center w-10 h-10 border rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item3:stroke-white transition-all ease-linear delay-100" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
-                                                </svg>
-                                            </div>
-                                            </a>
-                                        </div>
+                            <div class="grid w-full h-full gap-4 grid-rows-7">
+                                <h1 class="h-0 text-2xl font-medium">Hot Deals</h1>
+
+                                <div class="hot-deal-items group">
+                                    <a href="#"><img class="absolute left-0 h-full" src="./images/products/apple.png" alt="img-apple"></a>
+                                    <span
+                                    class="absolute text-sm transition-all duration-200 ease-linear left-32 top-6 group-hover:text-success-dark text-content-700">Green
+                                    Apple
+                                    </span>
+                                    <div class="absolute group-hover:hidden top-12 left-32">
+                                        <span class="text-base font-medium">$10.00</span>
+                                        <span class="text-sm line-through text-content-400">$20.00</span>
                                     </div>
-                                    <div class="relative transition-all ease-linear duration-300 overflow-hidden group hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark row-span-2 border rounded-[6px]">
-                                        <a href="#"><img class="absolute left-0 h-full" src="./images/products/orange.png" alt="img-orange"></a>
-                                        <span
-                                        class="absolute text-sm transition-all duration-200 ease-linear left-32 top-6 group-hover:text-success-dark text-content-700">Orange
-                                        </span>
-                                        <div class="group-hover:flex flex-row hidden animate-fadeIn gap-3 justify-between absolute top-14 left-32">
-                                            <a href="#">
-                                                <div class="flex group/item basis-1/3 justify-center items-center w-10 h-10 border rounded-full hover:bg-success transition-all ease-linear delay-100">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item:stroke-white transition-all ease-linear delay-100" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="flex basis-1/3 group/item2 hover:bg-success transition-all ease-linear delay-100 justify-center items-center w-10 h-10 border rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="flex group/item3 hover:bg-success transition-all ease-linear delay-100 basis-1/3 justify-center items-center w-10 h-10 border rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item3:stroke-white transition-all ease-linear delay-100" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
-                                                </svg>
-                                            </div>
-                                            </a>
-                                        </div>
-                                        <div class="group-hover:hidden absolute top-12 left-32">
-                                            <span class="text-base font-medium">$10.00</span>
-                                        </div>
-                                        <div class="group-hover:hidden absolute left-32 top-[72px]">
-                                            <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#CCCCCC" />
-                                    </svg>
-                                        </div>
+                                    <div class="group-hover:hidden absolute left-32 top-[72px]">
+                                        <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#CCCCCC" />
+                                </svg>
                                     </div>
-                                    <div class="relative transition-all ease-linear duration-300 overflow-hidden group hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark row-span-2 border rounded-[6px]">
-                                        <a href="#"><img class="absolute left-0 h-full" src="./images/products/lettuce.png" alt="img-lettuce"></a>
-                                        <span
-                                        class="absolute text-sm transition-all duration-200 ease-linear left-32 top-6 group-hover:text-success-dark text-content-700"> Lettuce
-                                        </span>
-                                        <div class="group-hover:flex flex-row hidden animate-fadeIn gap-3 justify-between absolute top-14 left-32">
-                                            <a href="#">
-                                                <div class="flex group/item basis-1/3 justify-center items-center w-10 h-10 border rounded-full hover:bg-success transition-all ease-linear delay-100">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item:stroke-white transition-all ease-linear delay-100" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="flex basis-1/3 group/item2 hover:bg-success transition-all ease-linear delay-100 justify-center items-center w-10 h-10 border rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="flex group/item3 hover:bg-success transition-all ease-linear delay-100 basis-1/3 justify-center items-center w-10 h-10 border rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item3:stroke-white transition-all ease-linear delay-100" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
-                                                </svg>
-                                            </div>
-                                            </a>
+                                    <div class="absolute flex-row justify-between hidden gap-3 group-hover:flex animate-fadeIn top-14 left-32">
+                                        <a href="#">
+                                            <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item basis-1/3 hover:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path class="transition-all ease-linear delay-100 group-hover/item:stroke-white" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
                                         </div>
-                                        <div class="group-hover:hidden absolute top-12 left-32">
-                                            <span class="text-base font-medium">$10.00</span>
-                                            
+                                        </a>
+                                        <a href="#">
+                                            <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full basis-1/3 group/item2 hover:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
                                         </div>
-                                        <div class="group-hover:hidden absolute left-32 top-[72px]">
-                                            <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#FF8A00" />
-                                    </svg>
-                                    <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
-                                        viewBox="0 0 12 13" fill="none">
-                                        <path
-                                            d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
-                                            fill="#CCCCCC" />
-                                    </svg>
+                                        </a>
+                                        <a href="#">
+                                            <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item3 hover:bg-success basis-1/3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path class="transition-all ease-linear delay-100 group-hover/item3:stroke-white" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
+                                            </svg>
                                         </div>
-                                    </div>              
+                                        </a>
+                                    </div>
                                 </div>
+
+                                <div class="hot-deal-items group">
+                                    <a href="#"><img class="absolute left-0 h-full" src="./images/products/orange.png" alt="img-orange"></a>
+                                    <span
+                                    class="absolute text-sm transition-all duration-200 ease-linear left-32 top-6 group-hover:text-success-dark text-content-700">Orange
+                                    </span>
+                                    <div class="absolute flex-row justify-between hidden gap-3 group-hover:flex animate-fadeIn top-14 left-32">
+                                        <a href="#">
+                                            <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item basis-1/3 hover:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path class="transition-all ease-linear delay-100 group-hover/item:stroke-white" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full basis-1/3 group/item2 hover:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item3 hover:bg-success basis-1/3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path class="transition-all ease-linear delay-100 group-hover/item3:stroke-white" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        </a>
+                                    </div>
+                                    <div class="absolute group-hover:hidden top-12 left-32">
+                                        <span class="text-base font-medium">$10.00</span>
+                                    </div>
+                                    <div class="group-hover:hidden absolute left-32 top-[72px]">
+                                        <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#CCCCCC" />
+                                </svg>
+                                    </div>
+                                </div>
+
+                                <div class="hot-deal-items group">
+                                    <a href="#"><img class="absolute left-0 h-full" src="./images/products/lettuce.png" alt="img-lettuce"></a>
+                                    <span
+                                    class="absolute text-sm transition-all duration-200 ease-linear left-32 top-6 group-hover:text-success-dark text-content-700"> Lettuce
+                                    </span>
+                                    <div class="absolute flex-row justify-between hidden gap-3 group-hover:flex animate-fadeIn top-14 left-32">
+                                        <a href="#">
+                                            <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item basis-1/3 hover:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path class="transition-all ease-linear delay-100 group-hover/item:stroke-white" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full basis-1/3 group/item2 hover:bg-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item3 hover:bg-success basis-1/3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path class="transition-all ease-linear delay-100 group-hover/item3:stroke-white" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        </a>
+                                    </div>
+                                    <div class="absolute group-hover:hidden top-12 left-32">
+                                        <span class="text-base font-medium">$10.00</span>
+                                        
+                                    </div>
+                                    <div class="group-hover:hidden absolute left-32 top-[72px]">
+                                        <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#FF8A00" />
+                                </svg>
+                                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                    viewBox="0 0 12 13" fill="none">
+                                    <path
+                                        d="M6.20672 9.44078L8.5711 10.9385C8.87335 11.1298 9.24835 10.8452 9.15872 10.4923L8.47585 7.80541C8.45656 7.73057 8.45878 7.6518 8.48227 7.57816C8.50575 7.50453 8.54954 7.43902 8.6086 7.38916L10.7288 5.62478C11.0071 5.39303 10.8638 4.93066 10.5057 4.90741L7.7371 4.72741C7.66255 4.72212 7.59105 4.69577 7.5309 4.65142C7.47075 4.60707 7.42444 4.54656 7.39735 4.47691L6.3646 1.87666C6.33648 1.80276 6.28656 1.73916 6.22146 1.69428C6.15636 1.6494 6.07916 1.62537 6.0001 1.62537C5.92103 1.62537 5.84383 1.6494 5.77873 1.69428C5.71364 1.73916 5.66372 1.80276 5.6356 1.87666L4.60285 4.47691C4.57581 4.54663 4.52952 4.60722 4.46937 4.65164C4.40922 4.69606 4.33768 4.72246 4.2631 4.72778L1.49447 4.90778C1.13672 4.93066 0.992723 5.39303 1.27135 5.62478L3.3916 7.38953C3.45059 7.43936 3.49434 7.50481 3.51782 7.57837C3.5413 7.65193 3.54356 7.73062 3.52435 7.80541L2.89135 10.2973C2.78372 10.7207 3.2341 11.0623 3.59635 10.8324L5.79385 9.44078C5.85561 9.40152 5.92728 9.38066 6.00047 9.38066C6.07366 9.38066 6.14533 9.40152 6.2071 9.44078H6.20672Z"
+                                        fill="#CCCCCC" />
+                                </svg>
+                                    </div>
+                                </div>              
+                            </div>
+
                             <div class="grid w-full h-full gap-4 grid-rows-8">
                                 <h1 class="h-0 row-span-1 text-2xl font-medium">Best Seller</h1>
-                                <div class="relative transition-all ease-linear duration-300 overflow-hidden group hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark row-span-2 border rounded-[6px]">
+                                <div class="hot-deal-items group">
                                     <a href="#"><img class="absolute left-0 h-full" src="./images/products/eggplant.png" alt="img-eggplant"></a>
                                     <span
                                         class="absolute text-sm transition-all duration-200 ease-linear left-32 top-6 group-hover:text-success-dark text-content-700"> Eggplant
                                         </span>
-                                        <div class="group-hover:flex flex-row hidden animate-fadeIn gap-3 justify-between absolute top-14 left-32">
+                                        <div class="absolute flex-row justify-between hidden gap-3 group-hover:flex animate-fadeIn top-14 left-32">
                                             <a href="#">
-                                                <div class="flex group/item basis-1/3 justify-center items-center w-10 h-10 border rounded-full hover:bg-success transition-all ease-linear delay-100">
+                                                <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item basis-1/3 hover:bg-success">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item:stroke-white transition-all ease-linear delay-100" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item:stroke-white" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             </div>
                                             </a>
                                             <a href="#">
-                                                <div class="flex basis-1/3 group/item2 hover:bg-success transition-all ease-linear delay-100 justify-center items-center w-10 h-10 border rounded-full">
+                                                <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full basis-1/3 group/item2 hover:bg-success">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             </div>
                                             </a>
                                             <a href="#">
-                                                <div class="flex group/item3 hover:bg-success transition-all ease-linear delay-100 basis-1/3 justify-center items-center w-10 h-10 border rounded-full">
+                                                <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item3 hover:bg-success basis-1/3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item3:stroke-white transition-all ease-linear delay-100" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item3:stroke-white" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
                                                 </svg>
                                             </div>
                                             </a>
                                         </div>
-                                        <div class="group-hover:hidden absolute top-12 left-32">
+                                        <div class="absolute group-hover:hidden top-12 left-32">
                                             <span class="text-base font-medium">$10.00</span>
                                             
                                         </div>
@@ -1843,36 +1850,37 @@
                                     </svg>
                                         </div>
                                 </div>
-                                <div class="relative transition-all ease-linear duration-300 overflow-hidden group hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark row-span-2 border rounded-[6px]"> 
+
+                                <div class="hot-deal-items group"> 
                                     <a href="#"><img class="absolute left-0 h-full" src="./images/products/vegetable-3.png" alt="img-vegetable"></a>
                                     <span
                                         class="absolute text-sm transition-all duration-200 ease-linear left-32 top-6 group-hover:text-success-dark text-content-700">Red Capsicum
                                         </span>
-                                        <div class="group-hover:flex flex-row hidden animate-fadeIn gap-3 justify-between absolute top-14 left-32">
+                                        <div class="absolute flex-row justify-between hidden gap-3 group-hover:flex animate-fadeIn top-14 left-32">
                                             <a href="#">
-                                                <div class="flex group/item basis-1/3 justify-center items-center w-10 h-10 border rounded-full hover:bg-success transition-all ease-linear delay-100">
+                                                <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item basis-1/3 hover:bg-success">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item:stroke-white transition-all ease-linear delay-100" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item:stroke-white" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             </div>
                                             </a>
                                             <a href="#">
-                                                <div class="flex basis-1/3 group/item2 hover:bg-success transition-all ease-linear delay-100 justify-center items-center w-10 h-10 border rounded-full">
+                                                <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full basis-1/3 group/item2 hover:bg-success">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             </div>
                                             </a>
                                             <a href="#">
-                                                <div class="flex group/item3 hover:bg-success transition-all ease-linear delay-100 basis-1/3 justify-center items-center w-10 h-10 border rounded-full">
+                                                <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item3 hover:bg-success basis-1/3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item3:stroke-white transition-all ease-linear delay-100" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item3:stroke-white" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
                                                 </svg>
                                             </div>
                                             </a>
                                         </div>
-                                        <div class="group-hover:hidden absolute top-12 left-32">
+                                        <div class="absolute group-hover:hidden top-12 left-32">
                                             <span class="text-base font-medium">$10.00</span>
                                             
                                         </div>
@@ -1909,36 +1917,37 @@
                                     </svg>
                                         </div>
                                 </div>
-                                <div class="relative transition-all ease-linear duration-300 overflow-hidden group hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark row-span-2 border rounded-[6px]">
+
+                                <div class="hot-deal-items group">
                                     <a href="#"><img class="absolute left-0 h-full cursor-pointer" src="./images/products/tomato.png" alt="img-tomato"></a>
                                     <span
                                         class="absolute text-sm transition-all duration-200 ease-linear left-32 top-6 group-hover:text-success-dark text-content-700">Red Tomatos
                                         </span>
-                                        <div class="group-hover:flex flex-row hidden animate-fadeIn gap-3 justify-between absolute top-14 left-32">
+                                        <div class="absolute flex-row justify-between hidden gap-3 group-hover:flex animate-fadeIn top-14 left-32">
                                             <a href="#">
-                                                <div class="flex group/item basis-1/3 justify-center items-center w-10 h-10 border rounded-full hover:bg-success transition-all ease-linear delay-100">
+                                                <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item basis-1/3 hover:bg-success">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item:stroke-white transition-all ease-linear delay-100" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item:stroke-white" d="M6.66667 8.33333H4.16667L2.5 17.5H17.5L15.8333 8.33333H13.3333M6.66667 8.33333V5.83333C6.66667 3.99239 8.15905 2.5 10 2.5V2.5C11.8409 2.5 13.3333 3.99238 13.3333 5.83333V8.33333M6.66667 8.33333H13.3333M6.66667 8.33333V10.8333M13.3333 8.33333V10.8333" stroke="#1A1A1A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             </div>
                                             </a>
                                             <a href="#">
-                                                <div class="flex basis-1/3 group/item2 hover:bg-success transition-all ease-linear delay-100 justify-center items-center w-10 h-10 border rounded-full">
+                                                <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full basis-1/3 group/item2 hover:bg-success">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path class="group-hover/item2:stroke-white transition-all ease-linear delay-100" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 3.54102C3.75 3.54102 1.25 10.0001 1.25 10.0001C1.25 10.0001 3.75 16.4577 10 16.4577C16.25 16.4577 18.75 10.0001 18.75 10.0001C18.75 10.0001 16.25 3.54102 10 3.54102V3.54102Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item2:stroke-white" d="M10 13.125C10.8288 13.125 11.6237 12.7958 12.2097 12.2097C12.7958 11.6237 13.125 10.8288 13.125 10C13.125 9.1712 12.7958 8.37634 12.2097 7.79029C11.6237 7.20424 10.8288 6.875 10 6.875C9.1712 6.875 8.37634 7.20424 7.79029 7.79029C7.20424 8.37634 6.875 9.1712 6.875 10C6.875 10.8288 7.20424 11.6237 7.79029 12.2097C8.37634 12.7958 9.1712 13.125 10 13.125V13.125Z" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             </div>
                                             </a>
                                             <a href="#">
-                                                <div class="flex group/item3 hover:bg-success transition-all ease-linear delay-100 basis-1/3 justify-center items-center w-10 h-10 border rounded-full">
+                                                <div class="flex items-center justify-center w-10 h-10 transition-all ease-linear delay-100 border rounded-full group/item3 hover:bg-success basis-1/3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path class="group-hover/item3:stroke-white transition-all ease-linear delay-100" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
+  <path class="transition-all ease-linear delay-100 group-hover/item3:stroke-white" d="M9.9996 17.5453C-6.66672 8.33354 4.99993 -1.66646 9.9996 4.65692C14.9999 -1.66646 26.6666 8.33354 9.9996 17.5453Z" stroke="#1A1A1A" stroke-width="1.5"/>
                                                 </svg>
                                             </div>
                                             </a>
                                         </div>
-                                        <div class="group-hover:hidden absolute top-12 left-32">
+                                        <div class="absolute group-hover:hidden top-12 left-32">
                                             <span class="text-base font-medium">$10.00</span>
                                             
                                         </div>
@@ -2001,12 +2010,15 @@
                     </div>
                 </div>
                 
-                <div class="latest-news bg-center bg-cover bg-no-repeat bg-[#F2F2F2] bg-[url('./images/background/bg-latest-news.png')] h-[764px] w-full">
+                <div class="latest-news">
                     <div class="text-center h-full mx-[200px]">
                         <h1 class="w-full pt-20 pb-2 uppercase text-success font-Pacifico leading-[1.2]">Blog</h1>
+
                         <h2 class=" text-content-900 text-[40px] font-semibold leading-[1.2] mb-16">Latest News</h2>
+
                         <div class="grid w-full grid-cols-3 gap-1">
-                        <div class="relative group rounded-lg w-[320px] bg-white">
+
+                        <div class="latest-news-items group">
                             <a href="#"><img src="./images/latest-news/Image1.png" alt="img-latest-news"></a>
                             <div class="absolute top-[170px] left-4 bg-white rounded-[4px]">
                                 <div class="px-3 py-1">
@@ -2054,7 +2066,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative group rounded-lg w-[320px] bg-white">
+
+                        <div class="latest-news-items group">
                             <a href="#"><img src="./images/latest-news/Image2.png" alt="img-latest-news"></a>
                             <div class="absolute top-[170px] left-4 bg-white rounded-[4px]">
                                 <div class="px-3 py-1">
@@ -2102,7 +2115,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative group rounded-lg w-[320px] bg-white">
+
+                        <div class="latest-news-items group">
                             <a href="#"><img src="./images/latest-news/Image3.png" alt="img-latest-news"></a>
                             <div class="absolute top-[170px] left-4 bg-white rounded-[4px]">
                                 <div class="px-3 py-1">
@@ -2154,7 +2168,7 @@
                     </div>
                 </div>
                 
-                <div class="Testimonials bg-center bg-cover bg-no-repeat bg-[#EDF2EE] bg-[url('./images/background/testimonials.png')] h-[504px]">
+                <div class="testimonials">
                     <div class="mx-[200px] h-full">
                         <div class="pt-[70px]">
                             <h1 class="font-Pacifico leading-[1.2] uppercase text-success">Testimonial</h1>
@@ -2162,7 +2176,7 @@
                         </div>
 
                         <div class="grid h-full grid-cols-3 gap-5 mt-10">
-                            <div class="bg-white hover:shadow-[0_10px_20px_0_rgba(0,0,0,0.1)] rounded-lg shadow-white h-[250px]">
+                            <div class="testimonials-items">
                                 <div class="grid w-full h-full grid-rows-6 p-5">
                                     <div class="row-span-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="26" viewBox="0 0 32 26" fill="none">
@@ -2202,7 +2216,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-white hover:shadow-[0_10px_20px_0_rgba(0,0,0,0.1)] rounded-lg shadow-white h-[250px]">
+                            <div class="testimonials-items">
                                 <div class="grid w-full h-full grid-rows-6 p-5">
                                     <div class="row-span-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="26" viewBox="0 0 32 26" fill="none">
@@ -2242,7 +2256,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-white hover:shadow-[0_10px_20px_0_rgba(0,0,0,0.1)] rounded-lg shadow-white h-[250px]">
+                            <div class="testimonials-items">
                                 <div class="grid w-full h-full grid-rows-6 p-5">
                                     <div class="row-span-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="26" viewBox="0 0 32 26" fill="none">
@@ -2497,8 +2511,7 @@
                 </div>
             </main>
 
-            <footer>
-                <div class="h-[400px] bg-[url('./images/background/BG-footer.png')] bg-content-900  bg-cover bg-center bg-no-repeat">
+            <footer class="footer">
                     <div class="mx-[200px] pt-[40px] pb-5 h-full">
                         <div class="flex flex-col h-full">
                             <div class="flex flex-row gap-16 basis-4/5">
@@ -2574,18 +2587,18 @@
                                         hover:after:w-full after:transition-all after:ease-linear after:duration-300">My Account</h1>
                                     </div>
                                     <div class="flex flex-col basis-1/3">
-                                        <a class="text-sm basis-1/3 text-content-400 hover:text-white transition-all ease-linear delay-100" href="#">
+                                        <a class="text-sm transition-all ease-linear delay-100 basis-1/3 text-content-400 hover:text-white" href="#">
                                             My Account
                                         </a>
-                                        <a class="text-sm basis-1/3 text-content-400 hover:text-white transition-all ease-linear delay-100" href="#">
+                                        <a class="text-sm transition-all ease-linear delay-100 basis-1/3 text-content-400 hover:text-white" href="#">
                                             Order History
                                         </a>
-                                        <a class="text-sm basis-1/3 text-content-400 hover:text-white transition-all ease-linear delay-100" href="#">
+                                        <a class="text-sm transition-all ease-linear delay-100 basis-1/3 text-content-400 hover:text-white" href="#">
                                             Shopping Cart
                                         </a>
                                     </div>
                                     <div class="basis-1/3">
-                                        <a class="text-sm basis-1/3 text-content-400 hover:text-white transition-all ease-linear delay-100" href="#">
+                                        <a class="text-sm transition-all ease-linear delay-100 basis-1/3 text-content-400 hover:text-white" href="#">
                                             Wishlist
                                         </a>
                                     </div>
@@ -2596,18 +2609,18 @@
                                         hover:after:w-full after:transition-all after:ease-linear after:duration-300">Helps</h1>
                                     </div>
                                     <div class="flex flex-col basis-1/3">
-                                        <a class="text-sm basis-1/3 text-content-400 hover:text-white transition-all ease-linear delay-100" href="#">
+                                        <a class="text-sm transition-all ease-linear delay-100 basis-1/3 text-content-400 hover:text-white" href="#">
                                             Contact
                                         </a>
-                                        <a class="text-sm basis-1/3 text-content-400 hover:text-white transition-all ease-linear delay-100" href="#">
+                                        <a class="text-sm transition-all ease-linear delay-100 basis-1/3 text-content-400 hover:text-white" href="#">
                                             Faqs
                                         </a>
-                                        <a class="text-sm basis-1/3 text-content-400 hover:text-white transition-all ease-linear delay-100" href="#">
+                                        <a class="text-sm transition-all ease-linear delay-100 basis-1/3 text-content-400 hover:text-white" href="#">
                                             Terms & Condition
                                         </a>
                                     </div>
                                     <div class="basis-1/3">
-                                        <a class="text-sm basis-1/3 text-content-400 hover:text-white transition-all ease-linear delay-100" href="#">
+                                        <a class="text-sm transition-all ease-linear delay-100 basis-1/3 text-content-400 hover:text-white" href="#">
                                             Privacy Policy
                                         </a>
                                     </div>
@@ -2705,23 +2718,52 @@
                                             <p class="flex items-center basis-3/4 text-[11px] text-white">Secure</p>
                                         </div>
 
-                                        <div class="flex justify-center items-center">
-                                            <p class="text-xs text-white font-medium">Payment</p>
+                                        <div class="flex items-center justify-center">
+                                            <p class="text-xs font-medium text-white">Payment</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </footer>
         </div>
+
+        <div class="model">
+            <div class="model-frame">
+                <div class="relative p-[10px] w-full" >
+                    <div class="model-img"></div>
+
+                    <div class="flex flex-col justify-center absolute right-[10px] top-[10px] bottom-[10px] left-[404px]">
+                        <h1 class="flex text-center justify-center items-center text-[40px] text-content-900 font-semibold leading-[1.2] basis-2/6">Subcribe to Our <br> Newsletter</h1>
+
+                        <p class="basis-1/6 text-center text-content-400 leading-[1.5]">Subscribe to our newlletter and Save your <span class="text-[#FF8A00] font-semibold leading-[1.2]">20% money</span> with discount code today.</p>
+
+                        <div class="basis-2/6 flex justify-center items-center">
+                            <div class="flex flex-row w-full items-center overflow-hidden border rounded-full">
+                                <input spellcheck="false" class="py-2 pl-4 pr-5 text-sm basis-3/4 h-9 text-content-400 placeholder:text-content-400 placeholder:italic placeholder:text-sm focus:outline-none" placeholder="Enter your email" type="email">
+                                <button type="submit" class="px-6 py-3 text-sm font-semibold text-white rounded-full bg-success basis-1/4 hover:bg-success-dark">Subscribe</button>
+                            </div>
+                        </div>
+                        
+                        <div class="basis-1/6 flex justify-center items-start">
+                            <input class="inline-block mr-2 mt-[5px]" type="checkbox"> <p class="inline-block text-content-600 text-sm">Do not show this window</p>
+                        </div>
+                    </div>
+
+                    <div class="close cursor-pointer absolute top-[10px] right-[10px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                        <path d="M18.75 6.25L6.25 18.75" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.25 6.25L18.75 18.75" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
     <!-- Javascript -->
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
     <script src="./app.js" type="text/javascript"></script>
-
-
 </body>
 
 </html>

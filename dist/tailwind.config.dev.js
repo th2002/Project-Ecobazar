@@ -38,11 +38,26 @@ module.exports = {
           to: {
             opacity: 1
           }
+        },
+        product: {
+          '0%': {
+            transform: 'translateX(-100%)'
+          },
+          '100%': {
+            transform: 'translateX(0)'
+          },
+          from: {
+            opacity: 0
+          },
+          to: {
+            opacity: 1
+          }
         }
       },
       animation: {
         slideDown: 'slideDown 0.5s ease-in-out',
-        fadeIn: 'fadeIn 0.5s ease-in-out'
+        fadeIn: 'fadeIn 0.5s ease-in-out',
+        product: 'product 2s ease-in-out'
       },
       backgroundImage: {
         'banner': 'url("./images/banners/Banner.png")'
