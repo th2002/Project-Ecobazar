@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' trusted-site.com;">
     <title>Organic eCommerce</title>
     <link rel="shortcut icon" href="./images/favicon/favicon-shop.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="./output.css">
-
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
 </head>
 
 <body>
@@ -326,9 +327,9 @@
 
                     <div id="srcollProduct" class="mx-[200px]">
                         <div class="grid grid-cols-4 gap-8">
-                            <div class="card-product group">
+                            <div class="card-product group scrollCard">
                                 <div class="absolute justify-center h-[246px]">
-                                    <a href="#"><img loading="lazy" class="w-full" src="./images/products/apple.png" alt="Apple"></a>
+                                    <a href="#"><img class="w-full" src="./images/products/apple.png" alt="Apple"></a>
                                 </div>
                                 <div
                                     class="absolute items-center px-2 py-1 justify-center text-white text-sm bg-red-500 rounded-[4px] top-3 left-3">
@@ -406,7 +407,7 @@
                                 </div>
                             </div>
 
-                            <div class="card-product group">
+                            <div class="card-product group scrollCard">
                                 <div class="absolute justify-center h-[302px]">
                                     <a href="#"><img class="w-full" src="./images/products/vegetable.png" alt="vegetable"></a>
                                 </div>
@@ -481,7 +482,7 @@
                                 </div>
                             </div>
 
-                            <div class="card-product group">
+                            <div class="card-product group scrollCard">
                                 <div class="absolute justify-center h-[302px]">
                                     <a href="#"><img class="w-full" src="./images/products/vegetable-2.png" alt="vegetable"></a>
                                 </div>
@@ -555,7 +556,7 @@
                                 </div>
                             </div>
 
-                            <div class="card-product group">
+                            <div class="card-product group scrollCard">
                                 <div class="absolute justify-center h-[302px]">
                                     <a href="#"><img class="w-full" src="./images/products/vegetable-3.png" alt="finger"></a>
                                 </div>
@@ -1266,7 +1267,7 @@
 
                     <div class="mx-[200px] mb-8">
                         <div class="grid grid-cols-4 gap-8">
-                            <div class="featured-best-seller group">
+                            <div class="featured-best-seller group scrollCard">
                                 <div class="absolute justify-center h-[246px]">
                                     <a href="#"><img class="w-full" src="./images/products/apple.png" alt="Apple"></a>
                                 </div>
@@ -1351,7 +1352,7 @@
                                 </div>
                             </div>
 
-                            <div class="featured-best-seller group">
+                            <div class="featured-best-seller group scrollCard">
                                 <div class="absolute justify-center h-[246px]">
                                     <a href="#"><img class="w-full" src="./images/products/vegetable.png" alt="vegetable"></a>
                                 </div>
@@ -1426,7 +1427,7 @@
                                 </div>
                             </div>
 
-                            <div class="featured-best-seller group">
+                            <div class="featured-best-seller group scrollCard">
                                 <div class="absolute justify-center h-[246px]">
                                     <a href="#"><img class="w-full" src="./images/products/lettuce.png" alt="vegetable"></a>
                                 </div>
@@ -1499,7 +1500,7 @@
                                 </div>
                             </div>
 
-                            <div class="featured-best-seller group">
+                            <div class="featured-best-seller group scrollCard">
                                 <div class="absolute justify-center h-[246px]">
                                     <a href="#"><img class="w-full" src="./images/products/chill.png" alt="chill"></a>
                                 </div>
@@ -2018,7 +2019,7 @@
 
                         <div class="grid w-full grid-cols-3 gap-1">
 
-                        <div class="latest-news-items group">
+                        <div class="latest-news-items group scrollCard_lastesNew">
                             <a href="#"><img src="./images/latest-news/Image1.png" alt="img-latest-news"></a>
                             <div class="absolute top-[170px] left-4 bg-white rounded-[4px]">
                                 <div class="px-3 py-1">
@@ -2067,7 +2068,7 @@
                             </div>
                         </div>
 
-                        <div class="latest-news-items group">
+                        <div class="latest-news-items group scrollCard_lastesNew">
                             <a href="#"><img src="./images/latest-news/Image2.png" alt="img-latest-news"></a>
                             <div class="absolute top-[170px] left-4 bg-white rounded-[4px]">
                                 <div class="px-3 py-1">
@@ -2116,7 +2117,7 @@
                             </div>
                         </div>
 
-                        <div class="latest-news-items group">
+                        <div class="latest-news-items group scrollCard_lastesNew">
                             <a href="#"><img src="./images/latest-news/Image3.png" alt="img-latest-news"></a>
                             <div class="absolute top-[170px] left-4 bg-white rounded-[4px]">
                                 <div class="px-3 py-1">
@@ -2175,8 +2176,8 @@
                             <h2 class="text-[40px] font-semibold leading-[1.2]">What Our Customer Says</h2>
                         </div>
 
-                        <div class="grid h-full grid-cols-3 gap-5 mt-10">
-                            <div class="testimonials-items">
+                        <div class="slideShowTest grid h-full grid-cols-3 gap-5 mt-10">
+                            <div class="testimonials-items scrollCard_feedBack">
                                 <div class="grid w-full h-full grid-rows-6 p-5">
                                     <div class="row-span-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="26" viewBox="0 0 32 26" fill="none">
@@ -2216,7 +2217,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="testimonials-items">
+                            <div class="testimonials-items scrollCard_feedBack">
                                 <div class="grid w-full h-full grid-rows-6 p-5">
                                     <div class="row-span-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="26" viewBox="0 0 32 26" fill="none">
@@ -2256,7 +2257,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="testimonials-items">
+                            <div class="testimonials-items scrollCard_feedBack">
                                 <div class="grid w-full h-full grid-rows-6 p-5">
                                     <div class="row-span-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="26" viewBox="0 0 32 26" fill="none">
@@ -2762,7 +2763,9 @@
         </div>
     </div>
     <!-- Javascript -->
-    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="./app.js" type="text/javascript"></script>
 </body>
 

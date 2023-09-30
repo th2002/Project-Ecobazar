@@ -1,4 +1,4 @@
-// Đóng model
+// Close model
 const closeIcon = document.querySelector('.close');
 const model = document.querySelector('.model');
 
@@ -7,23 +7,15 @@ closeIcon.addEventListener('click', () => {
 });
 
 
-const srcollProduct = document.getElementById('srcollProduct');
+// Scroll Animations
+ScrollReveal().reveal('.scrollCard', {delay: 300, easing: 'ease-in', reset: true, distance: '100px'});
+ScrollReveal().reveal('.scrollCard_lastesNew', {delay: 300, easing: 'ease-in', reset: true, distance: '100px', origin: 'left'});
+ScrollReveal().reveal('.scrollCard_feedBack', {delay: 300, easing: 'ease-in', reset: true, distance: '100px', origin: 'right'});
 
-function isElementInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  function handleScroll() {
-    if (isElementInViewport(featureScoll)) {
-      srcollProduct.classList.add("animate-product");
-      window.removeEventListener("scroll", handleScroll);
-    }
-  }
-
-  window.addEventListener("scroll", handleScroll);
+//Slide show
+// $('.slideShowTest').slick({
+//   slidesToShow: 2,
+//   slidesToScroll: 2,
+//   autoplay: true,
+//   autoplaySpeed: 2000,
+// });
