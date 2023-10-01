@@ -42,7 +42,7 @@
 }
 
 .shop-categories {
-    @apply mt-24 bg-cover bg-center bg-no-repeat bg-[url('./images/background/cate.png')] bg-[#EDF2EE];
+    @apply mt-24 bg-cover bg-center bg-no-repeat bg-[url('./assets/images/background/cate.png')] bg-[#EDF2EE];
 }
 
 .shop-categories-header {
@@ -54,15 +54,15 @@
 }
 
 .why-choose-us {
-    @apply w-full h-[620px] bg-center bg-cover bg-no-repeat bg-[url('./images/background/catagories.png')];
+    @apply w-full h-[620px] bg-center bg-cover bg-no-repeat bg-[url('./assets/images/background/catagories.png')];
 }
 
 .feature-banner {
-    @apply h-[330px] bg-cover bg-no-repeat bg-center bg-[url('./images/banners/Banner4.png')];
+    @apply h-[330px] bg-cover bg-no-repeat bg-center bg-[url('./assets/images/banners/Banner4.png')];
 }
 
 .bannar {
-    @apply bg-center bg-cover bg-no-repeat bg-[url('./images/background/bannar3.png')];
+    @apply bg-center bg-cover bg-no-repeat bg-[url('./assets/images/background/bannar3.png')];
 }
 
 .bannar-frame {
@@ -82,7 +82,7 @@
 }
 
 .latest-news {
-    @apply bg-center bg-cover bg-no-repeat bg-[#F2F2F2] bg-[url('./images/background/bg-latest-news.png')] h-[764px] w-full
+    @apply bg-center bg-cover bg-no-repeat bg-[#F2F2F2] bg-[url('./assets/images/background/bg-latest-news.png')] h-[764px] w-full
 }
 
 .latest-news-items {
@@ -90,7 +90,7 @@
 }
 
 .testimonials {
-    @apply bg-center bg-cover bg-no-repeat bg-[#EDF2EE] bg-[url('./images/background/testimonials.png')] h-[504px];
+    @apply bg-center bg-cover bg-no-repeat bg-[#EDF2EE] bg-[url('./assets/images/background/testimonials.png')] h-[504px];
 }
 
 .testimonials-items {
@@ -98,7 +98,7 @@
 }
 
 .footer {
-    @apply h-[400px] bg-[url('./images/background/BG-footer.png')] bg-content-900  bg-cover bg-center bg-no-repeat
+    @apply h-[400px] bg-[url('./assets/images/background/BG-footer.png')] bg-content-900  bg-cover bg-center bg-no-repeat
 }
 
 .model {
@@ -110,5 +110,5 @@
 }
 
 .model-img {
-    @apply bg-cover bg-top bg-no-repeat w-[354px] h-[380px] bg-[url('./images/background/bg-model.jpg')] rounded-md;
+    @apply bg-cover bg-top bg-no-repeat w-[354px] h-[380px] bg-[url('./assets/images/background/bg-model.jpg')] rounded-md;
 }
