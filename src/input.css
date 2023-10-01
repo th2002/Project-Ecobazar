@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* index */
 
 .tw-menu-items {
     @apply flex justify-center items-center basis-2/6 hover:text-content-800 cursor-pointer
@@ -111,4 +114,26 @@
 
 .model-img {
     @apply bg-cover bg-top bg-no-repeat w-[354px] h-[380px] bg-[url('./assets/images/background/bg-model.jpg')] rounded-md;
+}
+
+/* Admin */
+
+.root {
+    @apply relative h-[1050px] bg-[#f8f9fa] font-OpenSans;
+}
+
+.sidenav {
+    @apply fixed flex flex-col left-6 top-4 bottom-4 w-[250px] bg-white rounded-[1rem] shadow-[0_0_2rem_0_rgba(136,152,170,.15)] pb-2;
+}
+
+.sidenav-header {
+    @apply flex items-center h-[80px] w-full border-b-[1px] p-5;
+}
+
+.nav-links {
+    @apply flex flex-col h-[500px] mt-[14px]
+}
+
+.nav-items {
+    @apply flex items-center basis-1/6 p-5 h-[53px]
 }

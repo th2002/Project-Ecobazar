@@ -16,11 +16,16 @@ module.exports = {
           900: '#1A1A1A'
         },
         'success': '#00B207',
-        'success-dark': '#2C742F'
+        'success-dark': '#2C742F',
+        'admin-content': {
+          400: '#67748E',
+          500: '#344767'
+        }
       },
       fontFamily: {
         Poppins: ['poppins', 'sans-serif'],
-        Pacifico: ['Pacifico', 'sans-serif']
+        Pacifico: ['Pacifico', 'sans-serif'],
+        OpenSans: ['Open Sans', 'Karla']
       },
       keyframes: {
         slideDown: {
