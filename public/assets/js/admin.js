@@ -23,16 +23,20 @@ let currentIndex = 0;
 
 const navLinks = document.querySelectorAll('.nav-items');
 
-
+// Content element
 const mainContent = document.querySelector('.main-content');
 
+// List content
 const dashBoard = document.querySelector('.container-dashboard');
 const account = document.querySelector('.container-account');
 const product = document.querySelector('.container-product');
+const categories = document.querySelector('.container-categories');
+const bill = document.querySelector('.container-bill');
+const blog = document.querySelector('.container-blog');
 
-const listContent = [dashBoard, account, product];
+const listContent = [dashBoard, account, product, categories, bill, blog];
 
-
+// Click tab menu
 navLinks.forEach((link, index) => {
     link.addEventListener('click', () => {
         navLinks.forEach(otherLink => {
@@ -48,3 +52,29 @@ navLinks.forEach((link, index) => {
     });
 });
 
+// Statistical
+// Users
+const listUser = document.querySelectorAll('.user-row');
+const countUser = document.getElementById('count-user');
+countUser.innerHTML = listUser.length;
+
+// Products
+const listProduct = document.querySelectorAll('.product-row');
+const countProduct = document.getElementById('count-product');
+countProduct.innerHTML = listProduct.length;
+
+// Bills
+const listBill = document.querySelectorAll('.bill-row');
+const countBill = document.getElementById('count-order');
+countBill.innerHTML = listBill.length;
+
+// Total money
+const listMoney = document.querySelectorAll('.money-bill');
+const totalMoney = document.getElementById('total-money');
+console.log(listMoney)
+let total = 0;
+listMoney.forEach(money => {
+    moneyNew = money.innerHTML.replace(/,/g, '');
+    total += parseInt(moneyNew);
+});
+totalMoney.innerHTML = total.toLocaleString('vi', {style : 'currency', currency : 'VND'});
