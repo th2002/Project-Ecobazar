@@ -1,5 +1,5 @@
 const imgList = document.querySelectorAll('.img-banner');
-console.log(imgList);
+
 let currentIndex = 0;
 
 // function animateImage() {
@@ -20,3 +20,31 @@ let currentIndex = 0;
 //         }
 
 //         setInterval(showNextSlide, 2000);
+
+const navLinks = document.querySelectorAll('.nav-items');
+
+
+const mainContent = document.querySelector('.main-content');
+
+const dashBoard = document.querySelector('.container-dashboard');
+const account = document.querySelector('.container-account');
+const product = document.querySelector('.container-product');
+
+const listContent = [dashBoard, account, product];
+
+
+navLinks.forEach((link, index) => {
+    link.addEventListener('click', () => {
+        navLinks.forEach(otherLink => {
+            otherLink.classList.remove('bg-[#f6f9fc]');
+        })
+
+        if (link !== navLinks[navLinks.length - 1]) {
+             link.classList.add('bg-[#f6f9fc]');   
+        }
+
+        mainContent.innerHTML = listContent[index].innerHTML
+        
+    });
+});
+

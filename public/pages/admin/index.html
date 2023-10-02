@@ -11,9 +11,9 @@
 </head>
 <body>
     <div class="root">
-        <div class="max-h-[300px] absolute left-0 right-0 top-0 bottom-0 px-6 py-4 bg-[#5e72e4]"></div>
+        <div class="max-h-[300px] absolute left-0 right-0 top-0 bottom-0 px-6 py-4 bg-pink-300 opacity-30"></div>
         <aside>
-            <div class="sidenav">
+            <div class="sidenav overflow-hidden">
                 <div class="sidenav-header">
                     <img src="../../assets/images/icons/category.png" alt="icon-header">
 
@@ -22,50 +22,50 @@
                 
                 <div class="navbar-nav">
                     <ul class="nav-links">
-                        <li class="rounded-lg nav-items hover:bg-[#f6f9fc]">
+                        <li class="rounded-lg nav-items focus:bg-black">
                             <a class="w-full" href="#">
                                 <img class="inline-block mr-6" src="../../assets/images/icons/monitor.png" alt="icon-dashboard">
                                 <span class="inline-block text-sm font-semibold text-admin-content-400">Dashboard</span>
                             </a>
                         </li>
-                        <li class="rounded-lg nav-items hover:bg-[#f6f9fc]">
+                        <li class="rounded-lg nav-items">
                             <a class="w-full" href="#">
                                 <img class="inline-block mr-6" src="../../assets/images/icons/contact-info.png" alt="icon-account">
                                 <span class="inline-block text-sm font-semibold text-admin-content-400">Account</span>
                             </a>
                         </li>
-                        <li class="rounded-lg nav-items hover:bg-[#f6f9fc]">
+                        <li class="rounded-lg nav-items">
                             <a class="w-full" href="#">
                                 <img class="inline-block mr-6" src="../../assets/images/icons/box.png" alt="icon-products">
                                 <span class="inline-block text-sm font-semibold text-admin-content-400">Producs</span>
                             </a>
                         </li>
-                        <li class="rounded-lg nav-items hover:bg-[#f6f9fc]">
+                        <li class="rounded-lg nav-items">
                             <a class="w-full" href="#">
                                 <img class="inline-block mr-6" src="../../assets/images/icons/product-management.png" alt="icon-categories">
                                 <span class="inline-block text-sm font-semibold text-admin-content-400">Categories</span>
                             </a>
                         </li>
-                        <li class="rounded-lg nav-items hover:bg-[#f6f9fc]">
+                        <li class="rounded-lg nav-items">
                             <a class="w-full" href="#">
                                 <img class="inline-block mr-6" src="../../assets/images/icons/receipt.png" alt="icon-bills">
                                 <span class="inline-block text-sm font-semibold text-admin-content-400">Bills</span>
                             </a>
                         </li>
-                        <li class="rounded-lg nav-items hover:bg-[#f6f9fc]">
+                        <li class="rounded-lg nav-items">
                             <a class="w-full" href="#">
                                 <img class="inline-block mr-6" src="../../assets/images/icons/blog.png" alt="icon-blog">
                                 <span class="inline-block text-sm font-semibold text-admin-content-400">Blog</span>
                             </a>
                         </li>
                         <h2 class="p-5 text-xs font-bold tracking-[1.25px] uppercase text-admin-content-400">Account Page</h2>
-                        <li class="rounded-lg nav-items hover:bg-[#f6f9fc]">
+                        <li class="rounded-lg nav-items">
                             <a class="w-full" href="#">
                                 <img class="inline-block mr-6" src="../../assets/images/icons/user.png" alt="icon-profile">
                                 <span class="inline-block text-sm font-semibold text-admin-content-400">Profile</span>
                             </a>
                         </li>
-                        <li class="rounded-lg nav-items hover:bg-[#f6f9fc]">
+                        <li class="rounded-lg nav-items">
                             <a class="w-full" href="#">
                                 <img class="inline-block mr-6" src="../../assets/images/icons/sign-out.png" alt="icon-logout">
                                 <span class="inline-block text-sm font-semibold text-admin-content-400">Logout</span>
@@ -76,7 +76,7 @@
             </div>
         </aside>
         <main class="absolute main-content left-[300px] right-6 top-4 bottom-4">
-            <div class="container-fluid">
+            <div class="container-dashboard hidden">
                 <div class="w-full flex flex-row gap-8 h-[140px]">
                     <div class="flex flex-row h-full p-4 bg-white rounded-2xl basis-1/4">
                         <div class="flex flex-col gap-1 basis-2/3">
@@ -124,7 +124,7 @@
                         <h6>Sales Overview</h6>
                     </div>
                     <div class="basis-5/12 overflow-hidden rounded-2xl shadow-[0_0_2rem_0_rgba(136,152,170,.15)]">
-                        <img class="object-cover w-full h-full opacity-100 img-banner" src="../../assets/images/banners/admin_bn1.jpg" alt="banner">
+                        <img class="object-cover w-full h-full opacity-100 img-banner" src="../../assets/images/banners/thoBanner.jpg" alt="banner">
                         <img class="object-cover w-full h-full opacity-0 img-banner" src="../../assets/images/banners/admin_bn2.jpg" alt="banner">
                         <img class="object-cover w-full h-full opacity-0 img-banner" src="../../assets/images/banners/admin_bn3.jpg" alt="banner">
                     </div>
@@ -137,6 +137,313 @@
                     <div class="bg-white bg-center bg-no-repeat bg-cover basis-5/12 rounded-2xl shadow-[0_0_2rem_0_rgba(136,152,170,.15)] p-4">
                         <h6>Sales Overview</h6>
                     </div>
+                </div>
+            </div>
+            <div class="container-account hidden">
+                <h1 class="text-3xl text-admin-content-400 mb-8">Account - <span class="font-semibold">Management</span> </h1>
+                <div class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[70%] p-4">
+                    <h2 class="text-admin-content-500 text-xl mb-4">List of account</h2>
+                    <button class="w-[120px] h-10 rounded-[4px] bg-pink-400 px-2 py-1 text-white mb-8">Add Product</button>
+                    <table class="table-auto w-full">
+                        <thead>
+                            <tr class="p-2 text-left">
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Fullname</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>Role</th>
+                                <th>Date created</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="border-b-[0.5px] border-gray-400">
+                                <td class="py-6">trunghieu123</td>
+                                <td>123456</td>
+                                <td>Đinh Lê Trung Hiếu</td>
+                                <td>1051 Hậu Giang, HCM</td>
+                                <td>0906757332</td>
+                                <td>Customer</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center"><button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button></td>
+                            </tr>
+
+                            <tr class="border-b-[0.5px] border-gray-400">
+                                <td class="py-6">customer1</td>
+                                <td>123456</td>
+                                <td>Nguyễn Văn A</td>
+                                <td>ABC XYZ</td>
+                                <td>090xxxxxxx</td>
+                                <td>Customer</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center"><button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button></td>
+                            </tr>
+                            
+                            <tr >
+                                <td class="py-6">customer1</td>
+                                <td>123456</td>
+                                <td>Nguyễn Văn A</td>
+                                <td>ABC XYZ</td>
+                                <td>090xxxxxxx</td>
+                                <td>Customer</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center"><button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-product hidden">
+                <h1 class="text-3xl text-admin-content-400 mb-8">Product - <span class="font-semibold">Management</span> </h1>
+                <div class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[70%] p-4">
+                    <h2 class="text-admin-content-500 text-xl mb-4">List of products</h2>
+                    <button class="w-[120px] h-10 rounded-[4px] bg-pink-400 px-2 py-1 text-white mb-8">Add Product</button>
+                    <table class="table-auto w-full">
+                        <thead>
+                            <tr class="p-2 text-left">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Prince sale</th>
+                                <th>Quantity</th>
+                                <th>Image</th>
+                                <th>Description</th>
+                                <th>Sold</th>
+                                <th>Date add</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="border-b-[0.5px] border-gray-400">
+                                <td>1</td>
+                                <td class="py-6">Apple</td>
+                                <td>12,000</td>
+                                <td>4,000</td>
+                                <td>100</td>
+                                <td><img class="w-28 h-28" src="../../assets/images/products/apple.png" alt=""></td>
+                                <td>thơm ngon bổ dưỡng</td>
+                                <td>10</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+
+                            <tr class="border-b-[0.5px] border-gray-400">
+                                <td>2</td>
+                                <td class="py-6">Lettuce</td>
+                                <td>12,000</td>
+                                <td>4,000</td>
+                                <td>100</td>
+                                <td><img class="w-28 h-28" src="../../assets/images/products/lettuce.png" alt=""></td>
+                                <td>thơm ngon bổ dưỡng</td>
+                                <td>10</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+                            
+                            <tr >
+                                <td>3</td>
+                                <td class="py-6">Tomato</td>
+                                <td>12,000</td>
+                                <td>4,000</td>
+                                <td>100</td>
+                                <td><img class="w-28 h-28" src="../../assets/images/products/tomato.png" alt=""></td>
+                                <td>thơm ngon bổ dưỡng</td>
+                                <td>10</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-categories hidden ">
+                <h1 class="text-3xl text-admin-content-400 mb-8">Categories - <span class="font-semibold">Management</span> </h1>
+                <div class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[70%] p-4">
+                    <h2 class="text-admin-content-500 text-xl mb-4">List of categories</h2>
+                    <button class="w-[120px] h-10 rounded-[4px] bg-pink-400 px-2 py-1 text-white mb-8">Add Cate</button>
+                    <table class="table-auto w-full">
+                        <thead>
+                            <tr class="p-2 text-left">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Date add</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="border-b-[0.5px] border-gray-400">
+                                <td class="py-6">1</td>
+                                <td>Fresh Fruit</td>
+                                <td>20</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+
+                            <tr class="border-b-[0.5px] border-gray-400">
+                                <td class="py-6">1</td>
+                                <td>Vegetable</td>
+                                <td>50</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-6">1</td>
+                                <td>Meat & Fish</td>
+                                <td>20</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-bill hidden">
+                <h1 class="text-3xl text-admin-content-400 mb-8">Bill - <span class="font-semibold">Management</span> </h1>
+                <div class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[70%] p-4">
+                    <h2 class="text-admin-content-500 text-xl mb-4">List of Bills</h2>
+                    <table class="table-auto w-full">
+                        <thead>
+                            <tr class="p-2 text-left">
+                                <th>ID</th>
+                                <th>Customer</th>
+                                <th>Coupon</th>
+                                <th>Shipping</th>
+                                <th>Total money</th>
+                                <th>Payment Menthod</th>
+                                <th>Date created</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="border-b-[0.5px] border-gray-400">
+                                <td class="py-6">2</td>
+                                <td>trunghieu123</td>
+                                <td>HELLO2023</td>
+                                <td>20,000</td>
+                                <td>459,000</td>
+                                <td>Cash</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-yellow-500 text-white rounded-md mr-2">Detail</button>
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+
+                            <tr class="border-b-[0.5px] border-gray-400">
+                                <td class="py-6">3</td>
+                                <td>trunghieu123</td>
+                                <td>HELLO2023</td>
+                                <td>20,000</td>
+                                <td>459,000</td>
+                                <td>Cash</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-yellow-500 text-white rounded-md mr-2">Detail</button>
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-6">1</td>
+                                <td>trunghieu123</td>
+                                <td>HELLO2023</td>
+                                <td>20,000</td>
+                                <td>459,000</td>
+                                <td>Cash</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-yellow-500 text-white rounded-md mr-2">Detail</button>
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-blog">
+                <h1 class="text-3xl text-admin-content-400 mb-8">Blog - <span class="font-semibold">Management</span> </h1>
+                <div class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[70%] p-4">
+                    <h2 class="text-admin-content-500 text-xl mb-4">List of Blog</h2>
+                    <button class="w-[120px] h-10 rounded-[4px] bg-pink-400 px-2 py-1 text-white mb-8">Add Blog</button>
+                    <table class="table-auto w-full">
+                        <thead>
+                            <tr class="p-2 text-left">
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Status</th>
+                                <th>Category</th>
+                                <th>Views</th>
+                                <th>Comments</th>
+                                <th>Thumbnail</th>
+                                <th>Date created</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="border-b-[0.5px] border-gray-400">
+                                <td class="py-6">2</td>
+                                <td>trunghieu123</td>
+                                <td>HELLO2023</td>
+                                <td>20,000</td>
+                                <td>459,000</td>
+                                <td>Cash</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-yellow-500 text-white rounded-md mr-2">Detail</button>
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+
+                            <tr class="border-b-[0.5px] border-gray-400">
+                                <td class="py-6">3</td>
+                                <td>trunghieu123</td>
+                                <td>HELLO2023</td>
+                                <td>20,000</td>
+                                <td>459,000</td>
+                                <td>Cash</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-yellow-500 text-white rounded-md mr-2">Detail</button>
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-6">1</td>
+                                <td>trunghieu123</td>
+                                <td>HELLO2023</td>
+                                <td>20,000</td>
+                                <td>459,000</td>
+                                <td>Cash</td>
+                                <td>2/10/2023</td>
+                                <td class="text-center">
+                                    <button class="w-16 h-8 bg-yellow-500 text-white rounded-md mr-2">Detail</button>
+                                    <button class="w-16 h-8 bg-red-500 text-white rounded-md">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </main>

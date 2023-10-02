@@ -131,9 +131,13 @@
 }
 
 .nav-links {
-    @apply flex flex-col h-[500px] mt-[14px]
+    @apply flex flex-col h-[500px] mt-[14px] px-2
 }
 
 .nav-items {
     @apply flex items-center basis-1/6 p-5 h-[53px]
+}
+
+.container-account {
+
 }
