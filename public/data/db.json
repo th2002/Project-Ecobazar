@@ -1,0 +1,37 @@
+{
+  "users": [
+    { "id": 1, "username": "trunghieu123", "password": "123456", "fullname": "Đinh Lê Trung Hiếu", "address": "1051 Hậu Giang", "phone": "0906******", "role": "admin", "dateCreated": "2/10/2023" },
+    { "id": 2, "username": "trunghieu456", "password": "123456", "fullname": "Nguyễn Văn Khánh", "address": "215 Nguyễn Thị Minh Khai", "phone": "0902******", "role": "customer", "dateCreated": "2/10/2023" },
+    { "id": 3, "username": "trunghieu789", "password": "123456", "fullname": "Bùi Thị Hoa", "address": "989 Hồng Bàng", "phone": "0907******", "role": "customer", "dateCreated": "2/10/2023" },
+    { "id": 4, "username": "trunghieu357", "password": "123456", "fullname": "Nguyễn Đinh Tiến Dũng", "address": "35 Hoàng Hoa Thám", "phone": "0908******", "role": "customer", "dateCreated": "2/10/2023" },
+    { "id": 5, "username": "trunghieu159", "password": "123456", "fullname": "Lê Văn Khuê", "address": "791 Nguyễn Thị Định", "phone": "0903******", "role": "customer", "dateCreated": "2/10/2023" }
+  ],
+  "products": [
+    { "id": 1, "name": "Green Apple", "price": 23000, "prince_sale": 4000, "quantity": 100, "images": "../../assets/images/products/apple.png", "description": "everything...", "sold": "25", "dateCreated": "2/10/2023"},
+    { "id": 2, "name": "Lettuce", "price": 45000, "prince_sale": 4000, "quantity": 100, "images": "../../assets/images/products/lettuce.png", "description": "everything...", "sold": "33", "dateCreated": "2/10/2023"},
+    { "id": 3, "name": "Tomato", "price": 50000, "prince_sale": 4000, "quantity": 100, "images": "../../assets/images/products/tomato.png", "description": "everything...", "sold": "47", "dateCreated": "2/10/2023"},
+    { "id": 4, "name": "Eggplant", "price": 14000, "prince_sale": 4000, "quantity": 100, "images": "../../assets/images/products/eggplant.png", "description": "everything...", "sold": "64", "dateCreated": "2/10/2023"},
+    { "id": 5, "name": "Green chill", "price": 32000, "prince_sale": 4000, "quantity": 100, "images": "../../assets/images/products/chill.png", "description": "everything...", "sold": "72", "dateCreated": "2/10/2023"}
+  ],
+  "categories": [
+    { "id": 1, "name": "Fresh Fruit", "quantity": 23, "dateCreated": "2/10/2023" },
+    { "id": 2, "name": "Vegetable", "quantity": 36, "dateCreated": "2/10/2023" },
+    { "id": 3, "name": "Meat & Fish", "quantity": 40, "dateCreated": "2/10/2023" },
+    { "id": 4, "name": "Snacks", "quantity": 63, "dateCreated": "2/10/2023" },
+    { "id": 5, "name": "Cooking", "quantity": 55, "dateCreated": "2/10/2023" }
+  ],
+  "bills": [
+    {"id": 1, "customer": "trunghieu123", "coupon": "HELLO2023", "shipping": 20000, "totalMoney": 650000, "paymentMethod": "Cash", "dateCreated": "2/10/2023", "status": "Delivering"},
+    {"id": 2, "customer": "trunghieu456", "coupon": "HELLO2023", "shipping": 20000, "totalMoney": 1650000, "paymentMethod": "Bank", "dateCreated": "2/10/2023", "status": "Delivered"},
+    {"id": 3, "customer": "trunghieu789", "coupon": "HELLO2023", "shipping": 20000, "totalMoney": 550000, "paymentMethod": "Cash", "dateCreated": "2/10/2023", "status": "Delivered"},
+    {"id": 4, "customer": "trunghieu159", "coupon": "HELLO2023", "shipping": 20000, "totalMoney": 250000, "paymentMethod": "Bank", "dateCreated": "2/10/2023", "status": "Delivered"},
+    {"id": 5, "customer": "trunghieu357", "coupon": "HELLO2023", "shipping": 20000, "totalMoney": 850000, "paymentMethod": "Cash", "dateCreated": "2/10/2023", "status": "Cancel"}
+  ],
+  "blogs": [
+    {"id": 1, "title": "My blog", "author":"admin", "status": "Show", "category": "Healthy Eating", "views": 4000, "comments": 6500, "thumnail": "../../assets/images/latest-news/Image1.png", "dateCreated": "2/10/2023"},
+    {"id": 2, "title": "My blog", "author":"admin", "status": "Show", "category": "Healthy Eating", "views": 1200, "comments": 3200, "thumnail": "../../assets/images/latest-news/Image2.png", "dateCreated": "2/10/2023"},
+    {"id": 3, "title": "My blog", "author":"admin", "status": "Show", "category": "Healthy Eating", "views": 803, "comments": 1235, "thumnail": "../../assets/images/latest-news/Image3.png", "dateCreated": "2/10/2023"},
+    {"id": 4, "title": "My blog", "author":"admin", "status": "Show", "category": "Healthy Eating", "views": 563, "comments": 650, "thumnail": "../../assets/images/latest-news/Image4.jpg", "dateCreated": "2/10/2023"},
+    {"id": 5, "title": "My blog", "author":"admin", "status": "Show", "category": "Healthy Eating", "views": 825, "comments": 985, "thumnail": "../../assets/images/latest-news/Image5.jpg", "dateCreated": "2/10/2023"}
+  ]
+}

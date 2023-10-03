@@ -122,6 +122,7 @@
                 <div class="flex flex-row gap-6 h-[400px] w-full mt-8">
                     <div class="bg-white basis-7/12 rounded-2xl shadow-[0_0_2rem_0_rgba(136,152,170,.15)] p-4">
                         <h6>Sales Overview</h6>
+                        <canvas id="myChart"></canvas>
                     </div>
                     <div class="basis-5/12 overflow-hidden rounded-2xl shadow-[0_0_2rem_0_rgba(136,152,170,.15)]">
                         <img class="object-cover w-full h-full opacity-100 img-banner" src="../../assets/images/banners/thoBanner.jpg" alt="banner">
@@ -132,7 +133,7 @@
 
                 <div class="flex flex-row gap-6 h-[325px] w-full mt-8">
                     <div class="bg-white basis-7/12 rounded-2xl shadow-[0_0_2rem_0_rgba(136,152,170,.15)] p-4">
-                        <h6>Sales Overview</h6>
+                        <h6>New Products</h6>
                     </div>
                     <div class="bg-white bg-center bg-no-repeat bg-cover basis-5/12 rounded-2xl shadow-[0_0_2rem_0_rgba(136,152,170,.15)] p-4">
                         <h6>Sales Overview</h6>
@@ -143,10 +144,11 @@
                 <h1 class="mb-8 text-3xl text-admin-content-400">Account - <span class="font-semibold">Management</span> </h1>
                 <div class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[70%] p-4">
                     <h2 class="mb-4 text-xl text-admin-content-500">List of account</h2>
-                    <button class="w-[120px] h-10 rounded-[4px] bg-pink-400 px-2 py-1 text-white mb-8">Add Product</button>
+                    <button id="addAccount" class="w-[120px] h-10 rounded-[4px] bg-pink-400 px-2 py-1 text-white mb-8">Add Account</button>
                     <table class="w-full table-auto">
                         <thead>
                             <tr class="p-2 text-left">
+                                <th>ID</th>
                                 <th>Username</th>
                                 <th>Password</th>
                                 <th>Fullname</th>
@@ -158,46 +160,13 @@
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <tr class="user-row border-b-[0.5px] border-gray-400">
-                                <td class="py-6">trunghieu123</td>
-                                <td>123456</td>
-                                <td>Đinh Lê Trung Hiếu</td>
-                                <td>1051 Hậu Giang, HCM</td>
-                                <td>0906757332</td>
-                                <td>Customer</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center"><button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button></td>
-                            </tr>
-
-                            <tr class="user-row border-b-[0.5px] border-gray-400">
-                                <td class="py-6">customer1</td>
-                                <td>123456</td>
-                                <td>Nguyễn Văn A</td>
-                                <td>ABC XYZ</td>
-                                <td>090xxxxxxx</td>
-                                <td>Customer</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center"><button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button></td>
-                            </tr>
-                            
-                            <tr class="user-row ">
-                                <td class="py-6">customer1</td>
-                                <td>123456</td>
-                                <td>Nguyễn Văn A</td>
-                                <td>ABC XYZ</td>
-                                <td>090xxxxxxx</td>
-                                <td>Customer</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center"><button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button></td>
-                            </tr>
-                        </tbody>
+                        <tbody id="data_user"></tbody>
                     </table>
                 </div>
             </div>
             <div class="hidden container-product">
                 <h1 class="mb-8 text-3xl text-admin-content-400">Product - <span class="font-semibold">Management</span> </h1>
-                <div class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[70%] p-4">
+                <div class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[90%] p-4">
                     <h2 class="mb-4 text-xl text-admin-content-500">List of products</h2>
                     <button class="w-[120px] h-10 rounded-[4px] bg-pink-400 px-2 py-1 text-white mb-8">Add Product</button>
                     <table class="w-full table-auto">
@@ -216,52 +185,7 @@
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <tr class="product-row border-b-[0.5px] border-gray-400">
-                                <td>1</td>
-                                <td class="py-6">Apple</td>
-                                <td>12,000</td>
-                                <td>4,000</td>
-                                <td>100</td>
-                                <td><img class="w-28 h-28" src="../../assets/images/products/apple.png" alt=""></td>
-                                <td>thơm ngon bổ dưỡng</td>
-                                <td>10</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="product-row border-b-[0.5px] border-gray-400">
-                                <td>2</td>
-                                <td class="py-6">Lettuce</td>
-                                <td>12,000</td>
-                                <td>4,000</td>
-                                <td>100</td>
-                                <td><img class="w-28 h-28" src="../../assets/images/products/lettuce.png" alt=""></td>
-                                <td>thơm ngon bổ dưỡng</td>
-                                <td>10</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-                            
-                            <tr class="product-row ">
-                                <td>3</td>
-                                <td class="py-6">Tomato</td>
-                                <td>12,000</td>
-                                <td>4,000</td>
-                                <td>100</td>
-                                <td><img class="w-28 h-28" src="../../assets/images/products/tomato.png" alt=""></td>
-                                <td>thơm ngon bổ dưỡng</td>
-                                <td>10</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody id="data_products"></tbody>
                     </table>
                 </div>
             </div>
@@ -276,42 +200,12 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Quantity</th>
-                                <th>Date add</th>
+                                <th>Date created</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <tr class="border-b-[0.5px] border-gray-400">
-                                <td class="py-6">1</td>
-                                <td>Fresh Fruit</td>
-                                <td>20</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="border-b-[0.5px] border-gray-400">
-                                <td class="py-6">1</td>
-                                <td>Vegetable</td>
-                                <td>50</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td class="py-6">1</td>
-                                <td>Meat & Fish</td>
-                                <td>20</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody id="data_categories"></tbody>
                     </table>
                 </div>
             </div>
@@ -329,59 +223,18 @@
                                 <th>Total money</th>
                                 <th>Payment Menthod</th>
                                 <th>Date created</th>
+                                <th>Status</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <tr class="bill-row border-b-[0.5px] border-gray-400">
-                                <td class="py-6">1</td>
-                                <td>trunghieu123</td>
-                                <td>HELLO2023</td>
-                                <td>20,000</td>
-                                <td class="money-bill">459,000</td>
-                                <td>Cash</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 mr-2 text-white bg-yellow-500 rounded-md">Detail</button>
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="bill-row border-b-[0.5px] border-gray-400">
-                                <td class="py-6">2</td>
-                                <td>trunghieu123</td>
-                                <td>HELLO2023</td>
-                                <td>20,000</td>
-                                <td class="money-bill">459,000</td>
-                                <td>Cash</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 mr-2 text-white bg-yellow-500 rounded-md">Detail</button>
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-                            
-                            <tr class="bill-row ">
-                                <td class="py-6">3</td>
-                                <td>trunghieu123</td>
-                                <td>HELLO2023</td>
-                                <td>20,000</td>
-                                <td class="money-bill">459,000</td>
-                                <td>Cash</td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 mr-2 text-white bg-yellow-500 rounded-md">Detail</button>
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody id="data_bills"></tbody>
                     </table>
                 </div>
             </div>
             <div class="hidden container-blog">
                 <h1 class="mb-8 text-3xl text-admin-content-400">Blog - <span class="font-semibold">Management</span> </h1>
-                <div class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[70%] p-4">
+                <div class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[90%] p-4">
                     <h2 class="mb-4 text-xl text-admin-content-500">List of Blog</h2>
                     <button class="w-[120px] h-10 rounded-[4px] bg-pink-400 px-2 py-1 text-white mb-8">Add Blog</button>
                     <table class="w-full table-auto">
@@ -400,52 +253,7 @@
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <tr class="border-b-[0.5px] border-gray-400">
-                                <td class="py-14">1</td>
-                                <td>My Blog</td>
-                                <td>Admin</td>
-                                <td>Show</td>
-                                <td>Healthy Eating</td>
-                                <td>1,000</td>
-                                <td>165</td>
-                                <td><img class="w-28 h-28" src="../../assets/images/latest-news/Image1.png" alt=""></td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="border-b-[0.5px] border-gray-400">
-                                <td class="py-14">1</td>
-                                <td>My Blog</td>
-                                <td>Admin</td>
-                                <td>Show</td>
-                                <td>Healthy Eating</td>
-                                <td>1,000</td>
-                                <td>165</td>
-                                <td><img class="w-28 h-28" src="../../assets/images/latest-news/Image2.png" alt=""></td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td class="py-14">1</td>
-                                <td>My Blog</td>
-                                <td>Admin</td>
-                                <td>Show</td>
-                                <td>Healthy Eating</td>
-                                <td>1,000</td>
-                                <td>165</td>
-                                <td><img class="w-28 h-28" src="../../assets/images/latest-news/Image3.png" alt=""></td>
-                                <td>2/10/2023</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody id="data_blogs"></tbody>
                     </table>
                 </div>
             </div>
@@ -453,6 +261,8 @@
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../../assets/js/admin.js"></script>
+    
 </body>
 </html>
