@@ -66,6 +66,25 @@ async function fetchData_users() {
     }
     const json = await response.json();
     let outputUsers = "";
+
+    function handleDeleteUser(dataId) {
+      return async (e) => {
+        e.preventDefault();
+        try {
+          const deleteResp = await fetch(`http://localhost:3000/users/${dataId}`, {
+            method: 'DELETE',
+          });
+          if (deleteResp.ok) {
+            console.log('Tài khoản đã được xóa thành công.');
+          } else {
+            console.error('Lỗi trong quá trình xóa tài khoản.');
+          }
+        } catch (error) {
+          console.log("Lỗi khi lấy dữ liệu:", error);
+        }
+      };
+    }
+
     for (let data of json) {      
       outputUsers += `<tr class="user-row border-b-[0.5px] border-gray-400">
                         <td class="py-6">${data.id}</td>
@@ -76,10 +95,22 @@ async function fetchData_users() {
                         <td>${data.phone}</td>
                         <td>${data.role}</td>
                         <td>${data.dateCreated}</td>
-                        <td class="text-center"><button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button></td>
+                        <td class="text-center">
+                            <button data-id="${data.id}" class="w-16 h-8 mr-2 text-white bg-yellow-500 rounded-md delete-btn">Delete</button>
+                            <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
+                        </td>
                       </tr>`;
     }
     data_user.innerHTML = outputUsers;
+
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+    console.log(deleteButtons)
+    deleteButtons.forEach(button => {
+      const dataId = button.getAttribute('data-id');
+      console.log(dataId)
+      button.addEventListener('click', handleDeleteUser(dataId));
+
+    });
 
     // account statistical
     const listUser = document.querySelectorAll('.user-row');
@@ -91,6 +122,8 @@ async function fetchData_users() {
 }
 
 fetchData_users();
+
+
 
 // Get all products
 const data_products = document.getElementById('data_products');
@@ -166,7 +199,6 @@ async function fetchCategories() {
 fetchCategories();
 
 // Get all bills
-
 const data_bills = document.getElementById('data_bills');
 const apiBills = 'http://localhost:3000/bills'
 
@@ -208,8 +240,6 @@ async function fetchBills() {
         // statistical total money
         const totalMoney = document.getElementById('total-money');
         totalMoney.innerHTML = total.toLocaleString('vi', {style : 'currency', currency : 'VND'});
-
-        //
         
     } catch (error) {
         console.log('Error fetching data:', error)
@@ -277,3 +307,133 @@ const ctx = document.getElementById('myChart');
       }
     }
   });
+
+    // model, root node
+    const root = document.querySelector('.root');
+    const modelSubmitUsers = document.getElementById('modelSubmitUsers');
+    const modelSubmitCate = document.getElementById('modelSubmitCate');
+
+
+    // List add button 
+    function handleBtnAccountClick() {
+        modelSubmitUsers.classList.remove('hidden');
+    }
+
+    function handleBtnCateClick() {
+        modelSubmitCate.classList.remove('hidden');
+    }
+
+    // Click model event
+    modelSubmitUsers.addEventListener('click', (e) => {
+        if (e.target === modelSubmitUsers) {
+        modelSubmitUsers.classList.add('hidden');
+        }
+    });
+
+    modelSubmitCate.addEventListener('click', (e) => {
+        if (e.target === modelSubmitCate) {
+        modelSubmitCate.classList.add('hidden');
+        }
+    });
+
+    // list form
+    const userForm = document.getElementById('userForm');
+    const cateForm = document.getElementById('cateForm');
+
+
+    userForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // get value input
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const fullname = document.getElementById("fullname").value;
+        const address = document.getElementById("address").value;
+        const phone = document.getElementById("phone").value;
+        const role = document.getElementById("role").value;
+
+        
+        const response = await fetch('http://localhost:3000/users');
+        const users = await response.json();
+
+        // get the highest id in database
+        const highestId = Math.max(...users.map(user => user.id));
+
+        // get current day
+        const currentDay = new Date();
+        const day = currentDay.getDate();
+        const month = currentDay.getMonth() + 1;
+        const year = currentDay.getFullYear();
+        const dateCreated = `${day}/${month}/${year}`;
+
+        // create data JSON
+        const userData = {
+            id: highestId + 1,
+            username,
+            password,
+            fullname,
+            address,
+            phone,
+            role,
+            dateCreated: dateCreated,
+        };
+
+    // POST method JSON
+    await fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+        "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(r => r.json())
+    .then(data => {console.log(data)})
+    .catch(err => console.log(err));
+    });
+
+    cateForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // get value input
+    const name = document.getElementById("name").value;
+    const quantity = document.getElementById("quantity").value;
+    
+
+    
+    const response = await fetch('http://localhost:3000/categories');
+    const cates = await response.json();
+
+    // get the highest id in database
+    const highestId = Math.max(...cates.map(cate => cate.id));
+
+    // get current day
+    const currentDay = new Date();
+    const day = currentDay.getDate();
+    const month = currentDay.getMonth() + 1;
+    const year = currentDay.getFullYear();
+    const dateCreated = `${day}/${month}/${year}`;
+
+    // create data JSON
+    const cateData = {
+        id: highestId + 1,
+        name,
+        quantity,
+        dateCreated: dateCreated,
+    };
+
+    // POST method JSON
+    await fetch('http://localhost:3000/categories', {
+        method: 'POST',
+        headers: {
+        "Content-Type": "application/json"
+        },
+        body: JSON.stringify(cateData)
+    })
+    .then(r => r.json())
+    .then(data => {console.log(data)})
+    .catch(err => console.log(err));
+    });
+
+
+
+

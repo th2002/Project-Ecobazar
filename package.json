@@ -4,7 +4,8 @@
   "description": "Project-Shopery",
   "main": "index.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./public/output.css --watch"
+    "build:css": "tailwindcss -i ./src/input.css -o ./public/output.css --watch",
+    "start-json": "json-server --watch public/data/db.json"
   },
   "keywords": [],
   "author": "trunghieu1501.top",
