@@ -1,64 +1,38 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "trunghieu123",
-      "password": "123456",
-      "fullname": "Đinh Lê Trung Hiếu",
-      "address": "1051 Hậu Giang",
-      "phone": "0906******",
-      "role": "admin",
-      "dateCreated": "2/10/2023"
-    },
-    {
       "id": 2,
-      "username": "trunghieu456",
-      "password": "123456",
-      "fullname": "Nguyễn Văn Khánh",
-      "address": "215 Nguyễn Thị Minh Khai",
-      "phone": "0902******",
-      "role": "customer",
-      "dateCreated": "2/10/2023"
-    },
-    {
-      "id": 3,
-      "username": "trunghieu789",
-      "password": "123456",
-      "fullname": "Bùi Thị Hoa",
-      "address": "989 Hồng Bàng",
-      "phone": "0907******",
-      "role": "customer",
-      "dateCreated": "2/10/2023"
-    },
-    {
-      "id": 4,
-      "username": "trunghieu357",
-      "password": "123456",
-      "fullname": "Nguyễn Đinh Tiến Dũng",
-      "address": "35 Hoàng Hoa Thám",
-      "phone": "0908******",
-      "role": "customer",
-      "dateCreated": "2/10/2023"
-    },
-    {
-      "id": 5,
-      "username": "trunghieu159",
-      "password": "123456",
-      "fullname": "Lê Văn Khuê",
-      "address": "791 Nguyễn Thị Định",
-      "phone": "0903******",
-      "role": "customer",
-      "dateCreated": "2/10/2023"
-    },
-    {
-      "id": 6,
-      "username": "mt123",
+      "username": "trunghieu1234",
       "password": "123456",
       "fullname": "Mỹ Tiên",
       "address": "Thảo Điền, Quận 2",
       "phone": "0906757332",
       "role": "admin",
-      "dateCreated": "4/10/2023"
+      "dateCreated": "6/10/2023"
+    },
+    {
+      "id": 3,
+      "username": "chutam123",
+      "password": "123456",
+      "fullname": "chú Tám",
+      "address": "Thảo Điền, Quận 2",
+      "phone": "0906757332",
+      "role": "admin",
+      "dateCreated": "6/10/2023",
+      "userIdData": "3",
+      "dateUpdate": "6/10/2023"
+    },
+    {
+      "id": 4,
+      "username": "trunghieu2626",
+      "password": "123456",
+      "fullname": "Mỹ Tiên",
+      "address": "Thảo Điền, Quận 2",
+      "phone": "0906757332",
+      "role": "customer",
+      "dateCreated": "6/10/2023",
+      "dateUpdate": "6/10/2023",
+      "userIdData": "4"
     }
   ],
   "products": [
@@ -154,6 +128,66 @@
       "name": "Food",
       "quantity": "200",
       "dateCreated": "4/10/2023"
+    },
+    {
+      "id": 7,
+      "name": "",
+      "quantity": "",
+      "dateCreated": "5/10/2023"
+    },
+    {
+      "id": 8,
+      "name": "",
+      "quantity": "",
+      "dateCreated": "5/10/2023"
+    },
+    {
+      "id": 9,
+      "name": "",
+      "quantity": "",
+      "dateCreated": "5/10/2023"
+    },
+    {
+      "id": 10,
+      "name": "",
+      "quantity": "",
+      "dateCreated": "6/10/2023"
+    },
+    {
+      "id": 11,
+      "name": "",
+      "quantity": "",
+      "dateCreated": "6/10/2023"
+    },
+    {
+      "id": 12,
+      "name": "",
+      "quantity": "",
+      "dateCreated": "6/10/2023"
+    },
+    {
+      "id": 13,
+      "name": "",
+      "quantity": "",
+      "dateCreated": "6/10/2023"
+    },
+    {
+      "id": 14,
+      "name": "",
+      "quantity": "",
+      "dateCreated": "6/10/2023"
+    },
+    {
+      "id": 15,
+      "name": "",
+      "quantity": "",
+      "dateCreated": "6/10/2023"
+    },
+    {
+      "id": 16,
+      "name": "",
+      "quantity": "",
+      "dateCreated": "6/10/2023"
     }
   ],
   "bills": [
