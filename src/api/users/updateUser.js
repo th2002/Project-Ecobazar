@@ -1,4 +1,4 @@
-const modelUpdateUsers = document.getElementById("modelUpdateUsers");
+
 const apiUsers = "http://localhost:3000/users";
 
 // print input value

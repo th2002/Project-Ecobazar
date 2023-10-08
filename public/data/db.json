@@ -11,18 +11,6 @@
       "dateCreated": "6/10/2023",
       "dateUpdate": "8/10/2023",
       "userIdData": "1"
-    },
-    {
-      "id": 2,
-      "username": "th123",
-      "password": "1234567",
-      "fullname": "Mỹ Tiên",
-      "address": "Thảo Điền, Quận 2",
-      "phone": "0906757332",
-      "role": "customer",
-      "dateCreated": "8/10/2023",
-      "dateUpdate": "8/10/2023",
-      "userIdData": "2"
     }
   ],
   "products": [
@@ -87,43 +75,36 @@
       "id": 1,
       "name": "Fresh Fruit",
       "quantity": 23,
-      "dateCreated": "2/10/2023"
+      "dateCreated": "2/10/2023",
+      "dateUpdate": ""
     },
     {
       "id": 2,
       "name": "Vegetable",
       "quantity": 36,
-      "dateCreated": "2/10/2023"
+      "dateCreated": "2/10/2023",
+      "dateUpdate": ""
     },
     {
       "id": 3,
       "name": "Meat & Fish",
       "quantity": 40,
-      "dateCreated": "2/10/2023"
+      "dateCreated": "2/10/2023",
+      "dateUpdate": ""
     },
     {
       "id": 4,
       "name": "Snacks",
       "quantity": 63,
-      "dateCreated": "2/10/2023"
+      "dateCreated": "2/10/2023",
+      "dateUpdate": ""
     },
     {
       "id": 5,
       "name": "Cooking",
       "quantity": 55,
-      "dateCreated": "2/10/2023"
-    },
-    {
-      "id": 6,
-      "name": "Food",
-      "quantity": "200",
-      "dateCreated": "4/10/2023"
-    },
-    {
-      "id": 7,
-      "name": "House",
-      "quantity": "20",
-      "dateCreated": "8/10/2023"
+      "dateCreated": "2/10/2023",
+      "dateUpdate": ""
     }
   ],
   "bills": [

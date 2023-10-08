@@ -4,6 +4,11 @@ import * as getUsers from "../../../src/api/users/getUsers.js";
 import handleDeleteUser from "../../../src/api/users/deleteUser.js";
 import * as updateUser from "../../../src/api/users/updateUser.js";
 
+// import component from module categories
+import * as cate from "../../../src/api/categories/addCategories.js";
+import getCategories from "../../../src/api/categories/getCategories.js";
+import handleDeleteCate from "../../../src/api/categories/deleteCategories.js";
+import * as updateCate from "../../../src/api/categories/updateCategories.js";
 
 const navLinks = document.querySelectorAll(".nav-items");
 
@@ -81,60 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchProducts();
 });
 
-// Get all categories
-const data_categories = document.getElementById("data_categories");
-const apiCate = "http://localhost:3000/categories";
-
-async function handleDeleteCate(dataId) {
-  try {
-    const deleteResp = await fetch(`http://localhost:3000/categories/${dataId}`, {
-      method: "DELETE",
-    });
-    if (deleteResp.ok) {
-      console.log("The categories has been successfully deleted");
-    } else {
-      console.error("Error during categories deletion.");
-    }
-  } catch (error) {
-    console.log("Error fetch categories data:", error);
-  }
-}
-
-async function fetchCategories() {
-  try {
-    const response = await fetch(apiCate);
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const json = await response.json();
-    let outputCate = "";
-    for (let data of json) {
-      outputCate += `<tr class="border-b-[0.5px] border-gray-400">
-                                    <td class="py-6">${data.id}</td>
-                                    <td>${data.name}</td>
-                                    <td>${data.quantity}</td>
-                                    <td>${data.dateCreated}</td>
-                                    <td>${data.dateUpdate ? data.dateUpdate : "null"}</td>
-                                    <td class="text-center">
-                                        <button type="button" onclick="handleDeleteCate(${
-                              data.id
-                            })" data-id="${
-        data.id
-      }" class="w-16 h-8 mr-2 text-white bg-yellow-500 rounded-md delete-btn">Delete</button>
-                                        <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                    </td>
-                                </tr>`;
-    }
-
-    data_categories.innerHTML = outputCate;
-  } catch (error) {
-    console.log("Error fetching data:", error);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  fetchCategories();
-});
 
 // Get all bills
 const data_bills = document.getElementById("data_bills");
@@ -241,7 +192,7 @@ new Chart(ctx, {
         label: "Monthly revenue statistics",
         data: [12, 19, 3, 5, 2, 3],
         borderWidth: 1,
-        backgroundColor: "#F9A8D4",
+        backgroundColor: "#A855F7",
       },
     ],
   },
@@ -254,24 +205,24 @@ new Chart(ctx, {
   },
 });
 
-// model, root node
-const root = document.querySelector(".root");
 
 // Model users form
 const modelSubmitUsers = document.getElementById("modelSubmitUsers");
+const modelUpdateUsers = document.getElementById("modelUpdateUsers");
 
-const modelSubmitCate = document.getElementById("modelSubmitCate");
+// Close model add user form
+modelSubmitUsers.addEventListener("click", (e) => {
+  if (e.target === modelSubmitUsers) {
+    modelSubmitUsers.classList.add("hidden");
+  }
+});
 
-// List handle CRUD methods
-
-// fetch API users
-// function fetchApiUsers() {
-//   fetch("http://localhost:3000/users")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       return data;
-//     });
-// }
+// Close model update user form
+modelUpdateUsers.addEventListener("click", (e) => {
+  if (e.target === modelUpdateUsers) {
+    modelUpdateUsers.classList.add("hidden");
+  }
+});
 
 // CRUD users
 window.getDataUsers = getUsers.default;
@@ -287,77 +238,36 @@ window.submitUpdateUsers = updateUser.default;
 window.handleDeleteUser = handleDeleteUser;
 
 
-// CRUD categories
 
-function handleBtnCateClick() {
-  modelSubmitCate.classList.remove("hidden");
-}
 
-// Click model event close model add user form
-modelSubmitUsers.addEventListener("click", (e) => {
-  if (e.target === modelSubmitUsers) {
-    modelSubmitUsers.classList.add("hidden");
-  }
-});
+// model cate form
+const modelSubmitCate = document.getElementById("modelSubmitCate");
+const modelUpdateCate = document.getElementById("modelUpdateCate");
 
-// Click model event close model update user form
-modelUpdateUsers.addEventListener("click", (e) => {
-  if (e.target === modelUpdateUsers) {
-    modelUpdateUsers.classList.add("hidden");
-  }
-});
-
-/* Cate button */
+// Close model add cate form 
 modelSubmitCate.addEventListener("click", (e) => {
   if (e.target === modelSubmitCate) {
     modelSubmitCate.classList.add("hidden");
   }
 });
 
-// list form
-
-const cateForm = document.getElementById("cateForm");
-
-// Submit cate form
-cateForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  // get value input
-  const name = document.getElementById("name").value;
-  const quantity = document.getElementById("quantity").value;
-
-  const response = await fetch("http://localhost:3000/categories");
-  const cates = await response.json();
-
-  // get the highest id in database
-  const highestId = Math.max(...cates.map((cate) => cate.id));
-
-  // get current day
-  const currentDay = new Date();
-  const day = currentDay.getDate();
-  const month = currentDay.getMonth() + 1;
-  const year = currentDay.getFullYear();
-  const dateCreated = `${day}/${month}/${year}`;
-
-  // create data JSON
-  const cateData = {
-    id: highestId + 1,
-    name,
-    quantity,
-    dateCreated: dateCreated,
-  };
-
-  // POST method JSON
-  await fetch("http://localhost:3000/categories", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(cateData),
-  })
-    .then((r) => r.json())
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => console.log(err));
+// Close model update cate form 
+modelUpdateCate.addEventListener("click", (e) => {
+  if (e.target === modelUpdateCate) {
+    modelUpdateCate.classList.add("hidden");
+  }
 });
+
+// CRUD categories
+window.getCategories = getCategories;
+
+document.addEventListener("DOMContentLoaded", () => {
+  getCategories();
+});
+
+window.ShowFormAddCate = cate.ShowFormAddCate;
+window.submitAddCate = cate.default;
+window.ShowFormCate = updateCate.ShowFormCate;
+window.submitUpdateCate = updateCate.default;
+window.handleDeleteCate = handleDeleteCate;
+
