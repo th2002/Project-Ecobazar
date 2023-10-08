@@ -1,25 +1,9 @@
-const imgList = document.querySelectorAll(".img-banner");
+// import component from module users
+import * as addUser from "../../../src/api/users/addUser.js";
+import * as getUsers from "../../../src/api/users/getUsers.js";
+import handleDeleteUser from "../../../src/api/users/deleteUser.js";
+import * as updateUser from "../../../src/api/users/updateUser.js";
 
-let currentIndex = 0;
-
-// function animateImage() {
-//             gsap.to(banner, { x: "-100%", duration: 0.5, onComplete: () => {
-//                 banner.src = imgUrls[currentIndex];
-//                 currentIndex = (currentIndex + 1) % imgUrls.length;
-//                 gsap.fromTo(banner, { x: "100%" }, { x: "0%", duration: 0.5 });
-//             } });
-//         }
-
-// setInterval(animateImage, 3000);
-
-// function showNextSlide() {
-//             imgList[currentIndex].classList.remove('opacity-100');
-//             currentIndex = (currentIndex + 1) % imgList.length;
-//             imgList[currentIndex].classList.remove('opacity-0');
-//             imgList[currentIndex].classList.add('opacity-100');
-//         }
-
-//         setInterval(showNextSlide, 2000);
 
 const navLinks = document.querySelectorAll(".nav-items");
 
@@ -47,79 +31,10 @@ navLinks.forEach((link, index) => {
       link.classList.add("bg-[#f6f9fc]");
     }
 
+    // render content
     mainContent.innerHTML = listContent[index].innerHTML;
   });
 });
-
-// Fetch API json-server
-
-/* Users */
-const data_user = document.getElementById("data_user");
-const apiUsers = "http://localhost:3000/users";
-
-// Delete users data
-async function handleDeleteUser(dataId) {
-  try {
-    const deleteResp = await fetch(`http://localhost:3000/users/${dataId}`, {
-      method: "DELETE",
-    });
-    if (deleteResp.ok) {
-      console.log("The account has been successfully deleted");
-      mainContent.innerHTML = listContent[1].innerHTML;
-    } else {
-      console.error("Error during account deletion.");
-    }
-  } catch (error) {
-    console.log("Error fetch users data:", error);
-  }
-}
-
-// Update users data
-
-
-// Get data users
-async function fetchData_users() {
-  try {
-    const response = await fetch(apiUsers);
-
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-
-    const json = await response.json();
-    let outputUsers = "";
-
-    for (let data of json) {
-      outputUsers += `<tr class="user-row border-b-[0.5px] border-gray-400">
-                        <td class="py-6">${data.id}</td>
-                        <td>${data.username}</td>
-                        <td>${data.password}</td>
-                        <td>${data.fullname}</td>
-                        <td>${data.address}</td>
-                        <td>${data.phone}</td>
-                        <td>${data.role}</td>
-                        <td>${data.dateCreated}</td>
-                        <td>${data.dateUpdate ? data.dateUpdate : 'null'}</td>
-                        <td class="text-center">
-                            <button type="button" onclick="handleDeleteUser(${data.id})" data-id="${data.id}" class="w-16 h-8 mr-2 text-white bg-yellow-500 rounded-md delete-btn">Delete</button>
-                            <button onclick="handleUpdateAccount(${data.id})" class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                        </td>
-                      </tr>`;
-    }
-
-    // print users data
-    data_user.innerHTML = outputUsers;
-
-    // account statistical
-    const listUser = document.querySelectorAll(".user-row");
-    const countUser = document.getElementById("count-user");
-    countUser.innerHTML = listUser.length;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
-}
-
-fetchData_users();
 
 /* Products */
 
@@ -162,11 +77,28 @@ async function fetchProducts() {
   }
 }
 
-fetchProducts();
+document.addEventListener("DOMContentLoaded", () => {
+  fetchProducts();
+});
 
 // Get all categories
 const data_categories = document.getElementById("data_categories");
 const apiCate = "http://localhost:3000/categories";
+
+async function handleDeleteCate(dataId) {
+  try {
+    const deleteResp = await fetch(`http://localhost:3000/categories/${dataId}`, {
+      method: "DELETE",
+    });
+    if (deleteResp.ok) {
+      console.log("The categories has been successfully deleted");
+    } else {
+      console.error("Error during categories deletion.");
+    }
+  } catch (error) {
+    console.log("Error fetch categories data:", error);
+  }
+}
 
 async function fetchCategories() {
   try {
@@ -182,7 +114,13 @@ async function fetchCategories() {
                                     <td>${data.name}</td>
                                     <td>${data.quantity}</td>
                                     <td>${data.dateCreated}</td>
+                                    <td>${data.dateUpdate ? data.dateUpdate : "null"}</td>
                                     <td class="text-center">
+                                        <button type="button" onclick="handleDeleteCate(${
+                              data.id
+                            })" data-id="${
+        data.id
+      }" class="w-16 h-8 mr-2 text-white bg-yellow-500 rounded-md delete-btn">Delete</button>
                                         <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
                                     </td>
                                 </tr>`;
@@ -194,7 +132,9 @@ async function fetchCategories() {
   }
 }
 
-fetchCategories();
+document.addEventListener("DOMContentLoaded", () => {
+  fetchCategories();
+});
 
 // Get all bills
 const data_bills = document.getElementById("data_bills");
@@ -246,7 +186,9 @@ async function fetchBills() {
   }
 }
 
-fetchBills();
+document.addEventListener("DOMContentLoaded", () => {
+  fetchBills();
+});
 
 // Get all blogs
 const data_blogs = document.getElementById("data_blogs");
@@ -283,8 +225,11 @@ async function fetchBlogs() {
   }
 }
 
-fetchBlogs();
+document.addEventListener("DOMContentLoaded", () => {
+  fetchBlogs();
+});
 
+// library statictiscal
 const ctx = document.getElementById("myChart");
 
 new Chart(ctx, {
@@ -314,158 +259,35 @@ const root = document.querySelector(".root");
 
 // Model users form
 const modelSubmitUsers = document.getElementById("modelSubmitUsers");
-const modelUpdateUsers = document.getElementById("modelUpdateUsers");
 
 const modelSubmitCate = document.getElementById("modelSubmitCate");
 
 // List handle CRUD methods
 
-/* Users button */
-const userForm = document.getElementById("userForm");
-const userUpdateForm = document.getElementById("userUpdateForm");
+// fetch API users
+// function fetchApiUsers() {
+//   fetch("http://localhost:3000/users")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       return data;
+//     });
+// }
 
-// Submit add user form
-userForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+// CRUD users
+window.getDataUsers = getUsers.default;
 
-  // get value input
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  const fullname = document.getElementById("fullname").value;
-  const address = document.getElementById("address").value;
-  const phone = document.getElementById("phone").value;
-  const role = document.getElementById("role").value;
-
-  // get data users to find id
-  const response = await fetch("http://localhost:3000/users");
-  const users = await response.json();
-
-  // get the highest id in database
-  const highestId = Math.max(...users.map((user) => user.id));
-
-  // get current day
-  const currentDay = new Date();
-  const day = currentDay.getDate();
-  const month = currentDay.getMonth() + 1;
-  const year = currentDay.getFullYear();
-  const dateCreated = `${day}/${month}/${year}`;
-
-  // create data JSON
-  const userData = {
-    id: highestId + 1,
-    username,
-    password,
-    fullname,
-    address,
-    phone,
-    role,
-    dateCreated: dateCreated,
-    dateUpdate: 'null',
-  };
-
-  // POST method JSON
-  await fetch("http://localhost:3000/users", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userData),
-  })
-    .then((r) => r.json())
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => console.log(err));
+document.addEventListener("DOMContentLoaded", () => {
+  getDataUsers();
 });
 
-// Submit update user form
-userUpdateForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  // get value input
-  const userIdData = document.getElementById("userIdData").textContent;
-  const username = document.getElementById("usernameUpdate").value;
-  const password = document.getElementById("passwordUpdate").value;
-  const fullname = document.getElementById("fullnameUpdate").value;
-  const address = document.getElementById("addressUpdate").value;
-  const phone = document.getElementById("phoneUpdate").value;
-  const role = document.getElementById("roleUpdate").value;
+window.ShowFormAddUser = addUser.ShowFormAddUser;
+window.submitAddUser = addUser.default;
+window.ShowFormUpdateUser = updateUser.ShowFormUpdateUser;
+window.submitUpdateUsers = updateUser.default;
+window.handleDeleteUser = handleDeleteUser;
 
 
-  // get current day
-  const currentDay = new Date();
-  const day = currentDay.getDate();
-  const month = currentDay.getMonth() + 1;
-  const year = currentDay.getFullYear();
-  const dateUpdate = `${day}/${month}/${year}`;
-
-  // Create object user data
-  const userData = {
-    userIdData,
-    username,
-    password,
-    fullname,
-    address,
-    phone,
-    role,
-    dateUpdate
-  };
-
-  try {
-    const response = await fetch(`http://localhost:3000/users/${userIdData}`, {
-      method: "PATCH", 
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    });
-
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-
-    alert("Cập nhật thông tin người dùng thành công!");
-  } catch (error) {
-    console.error("Lỗi khi cập nhật thông tin người dùng:", error);
-  }
-
-});
-
-// Button show add Account form
-function handleBtnAccountClick() {
-  modelSubmitUsers.classList.remove("hidden");
-}
-
-// Button show edit Account form 
-async function handleUpdateAccount(userId) {
-
-  const userIdData = document.getElementById("userIdData");
-  const username = document.getElementById("usernameUpdate");
-  const password = document.getElementById("passwordUpdate");
-  const fullname = document.getElementById("fullnameUpdate");
-  const address = document.getElementById("addressUpdate");
-  const phone = document.getElementById("phoneUpdate");
-  const role = document.getElementById("roleUpdate");
-
-
-  const getData = await fetch(`http://localhost:3000/users/${userId}`);
-
-  if(!getData.ok) {
-    console.log("Error fetch data")
-  }
-  
-  const usersData = await getData.json();
-  
-  userIdData.textContent = usersData.id;
-  username.value = usersData.username;
-  password.value = usersData.password;
-  fullname.value = usersData.fullname;
-  address.value = usersData.address;
-  phone.value = usersData.phone;
-  role.value = usersData.role;
-
-  modelUpdateUsers.classList.remove("hidden");
-}
+// CRUD categories
 
 function handleBtnCateClick() {
   modelSubmitCate.classList.remove("hidden");
@@ -495,8 +317,6 @@ modelSubmitCate.addEventListener("click", (e) => {
 // list form
 
 const cateForm = document.getElementById("cateForm");
-
-
 
 // Submit cate form
 cateForm.addEventListener("submit", async (e) => {

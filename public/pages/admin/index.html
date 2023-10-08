@@ -11,6 +11,8 @@
       type="image/x-icon" />
     <!-- Link css tailwind-->
     <link rel="stylesheet" href="../../output.css" />
+    <!-- Link library submit notification -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </head>
   <body>
     <div class="root">
@@ -273,7 +275,7 @@
             <h2 class="mb-4 text-xl text-admin-content-500">List of account</h2>
             <button
               id="btn_Account"
-              onclick="handleBtnAccountClick()"
+              onclick="ShowFormAddUser()"
               class="w-[120px] h-10 rounded-[4px] bg-pink-400 px-2 py-1 text-white mb-8">
               Add Account
             </button>
@@ -335,7 +337,7 @@
             Categories - <span class="font-semibold">Management</span>
           </h1>
           <div
-            class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[70%] p-4">
+            class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full p-4">
             <h2 class="mb-4 text-xl text-admin-content-500">
               List of categories
             </h2>
@@ -351,6 +353,7 @@
                   <th>Name</th>
                   <th>Quantity</th>
                   <th>Date created</th>
+                  <th>Date upddate</th>
                   <th class="text-center">Action</th>
                 </tr>
               </thead>
@@ -422,6 +425,7 @@
       <!-- Model user form -->
       <div id="modelSubmitUsers" class="hidden model">
         <form
+          onsubmit="submitAddUser(event)"
           id="userForm"
           class="absolute w-[70%] bg-white left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 rounded-lg">
           <div class="p-8">
@@ -520,12 +524,13 @@
       </div>
       <div id="modelUpdateUsers" class="hidden model">
         <form
+          onsubmit="submitUpdateUsers(event)"
           id="userUpdateForm"
           class="absolute w-[70%] bg-white left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 rounded-lg">
           <div class="p-8">
             <h1
               class="text-4xl font-semibold tracking-[2px] uppercase text-admin-content-400">
-              Update Users <span id="userIdData"></span>
+              Update Users <span class="hidden" id="userIdData"></span>
             </h1>
 
             <div class="flex flex-wrap gap-8 mt-8">
@@ -671,6 +676,6 @@
     <!-- Javscript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="text/javascript" src="../../assets/js/admin.js"></script>
+    <script type="module" src="../../assets/js/admin.js"></script>
   </body>
 </html>

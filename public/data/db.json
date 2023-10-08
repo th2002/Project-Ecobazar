@@ -1,38 +1,28 @@
 {
   "users": [
     {
-      "id": 2,
-      "username": "trunghieu1234",
+      "id": 1,
+      "username": "th789",
       "password": "123456",
       "fullname": "Mỹ Tiên",
       "address": "Thảo Điền, Quận 2",
       "phone": "0906757332",
       "role": "admin",
-      "dateCreated": "6/10/2023"
-    },
-    {
-      "id": 3,
-      "username": "chutam123",
-      "password": "123456",
-      "fullname": "chú Tám",
-      "address": "Thảo Điền, Quận 2",
-      "phone": "0906757332",
-      "role": "admin",
       "dateCreated": "6/10/2023",
-      "userIdData": "3",
-      "dateUpdate": "6/10/2023"
+      "dateUpdate": "8/10/2023",
+      "userIdData": "1"
     },
     {
-      "id": 4,
-      "username": "trunghieu2626",
-      "password": "123456",
+      "id": 2,
+      "username": "th123",
+      "password": "1234567",
       "fullname": "Mỹ Tiên",
       "address": "Thảo Điền, Quận 2",
       "phone": "0906757332",
       "role": "customer",
-      "dateCreated": "6/10/2023",
-      "dateUpdate": "6/10/2023",
-      "userIdData": "4"
+      "dateCreated": "8/10/2023",
+      "dateUpdate": "8/10/2023",
+      "userIdData": "2"
     }
   ],
   "products": [
@@ -131,63 +121,9 @@
     },
     {
       "id": 7,
-      "name": "",
-      "quantity": "",
-      "dateCreated": "5/10/2023"
-    },
-    {
-      "id": 8,
-      "name": "",
-      "quantity": "",
-      "dateCreated": "5/10/2023"
-    },
-    {
-      "id": 9,
-      "name": "",
-      "quantity": "",
-      "dateCreated": "5/10/2023"
-    },
-    {
-      "id": 10,
-      "name": "",
-      "quantity": "",
-      "dateCreated": "6/10/2023"
-    },
-    {
-      "id": 11,
-      "name": "",
-      "quantity": "",
-      "dateCreated": "6/10/2023"
-    },
-    {
-      "id": 12,
-      "name": "",
-      "quantity": "",
-      "dateCreated": "6/10/2023"
-    },
-    {
-      "id": 13,
-      "name": "",
-      "quantity": "",
-      "dateCreated": "6/10/2023"
-    },
-    {
-      "id": 14,
-      "name": "",
-      "quantity": "",
-      "dateCreated": "6/10/2023"
-    },
-    {
-      "id": 15,
-      "name": "",
-      "quantity": "",
-      "dateCreated": "6/10/2023"
-    },
-    {
-      "id": 16,
-      "name": "",
-      "quantity": "",
-      "dateCreated": "6/10/2023"
+      "name": "House",
+      "quantity": "20",
+      "dateCreated": "8/10/2023"
     }
   ],
   "bills": [
