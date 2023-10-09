@@ -44,7 +44,7 @@ async function submitAddUser(e) {
 
   // check username exist
   for (let value of users) {
-    if (value.username === username) {
+    if (value.username.toLowerCase() === username.toLowerCase()) {
       Swal.fire({
         icon: "error",
         title: "Error!",

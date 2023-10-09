@@ -32,7 +32,7 @@ async function submitAddCate(e) {
 
     // Validate form
     for(let value of cates) {
-        if(name === value.name) {
+        if(name.toLowerCase() === value.name.toLowerCase()) {
             Swal.fire({
                 icon: "error",
                 title: "Error!",

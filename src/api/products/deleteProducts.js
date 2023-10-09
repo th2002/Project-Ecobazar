@@ -1,8 +1,4 @@
-import fetchData_users from './getUsers.js';
-import {data_user, apiUsers} from './getUsers.js';
-
-async function handleDeleteUser(dataId, e) {
-  e.preventDefault();
+function handleDeleteProduct(dataId) {
     Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -11,12 +7,11 @@ async function handleDeleteUser(dataId, e) {
     }).then((result) => {
         if (result.isConfirmed) {
             Swal.fire("Deleted!", "Your file has been deleted.", "success");
-            fetch(`http://localhost:3000/users/${dataId}`, {
+            fetch(`http://localhost:3000/products/${dataId}`, {
                 method: "DELETE",
             });
         }
-        // fetchData_users(e);
     });
 }
 
-export default handleDeleteUser;
+export default handleDeleteProduct;

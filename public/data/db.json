@@ -11,6 +11,18 @@
       "dateCreated": "6/10/2023",
       "dateUpdate": "8/10/2023",
       "userIdData": "1"
+    },
+    {
+      "id": 2,
+      "username": "mt123",
+      "password": "123456",
+      "fullname": "Mỹ Tiên",
+      "address": "Thảo Điền, Quận 2",
+      "phone": "0906757332",
+      "role": "customer",
+      "dateCreated": "9/10/2023",
+      "dateUpdate": "9/10/2023",
+      "userIdData": "2"
     }
   ],
   "products": [
@@ -20,10 +32,12 @@
       "price": 23000,
       "prince_sale": 4000,
       "quantity": 100,
+      "category": "fresh fruit",
       "images": "../../assets/images/products/apple.png",
       "description": "everything...",
       "sold": "25",
-      "dateCreated": "2/10/2023"
+      "dateCreated": "2/10/2023",
+      "dateUpdate": ""
     },
     {
       "id": 2,
@@ -31,10 +45,12 @@
       "price": 45000,
       "prince_sale": 4000,
       "quantity": 100,
+      "category": "vegetable",
       "images": "../../assets/images/products/lettuce.png",
       "description": "everything...",
       "sold": "33",
-      "dateCreated": "2/10/2023"
+      "dateCreated": "2/10/2023",
+      "dateUpdate": ""
     },
     {
       "id": 3,
@@ -42,10 +58,12 @@
       "price": 50000,
       "prince_sale": 4000,
       "quantity": 100,
+      "category": "fresh fruit",
       "images": "../../assets/images/products/tomato.png",
       "description": "everything...",
       "sold": "47",
-      "dateCreated": "2/10/2023"
+      "dateCreated": "2/10/2023",
+      "dateUpdate": ""
     },
     {
       "id": 4,
@@ -53,21 +71,25 @@
       "price": 14000,
       "prince_sale": 4000,
       "quantity": 100,
+      "category": "vegetable",
       "images": "../../assets/images/products/eggplant.png",
       "description": "everything...",
       "sold": "64",
-      "dateCreated": "2/10/2023"
+      "dateCreated": "2/10/2023",
+      "dateUpdate": ""
     },
     {
       "id": 5,
       "name": "Green chill",
-      "price": 32000,
-      "prince_sale": 4000,
-      "quantity": 100,
+      "price": "32000",
+      "prince_sale": "4000",
+      "quantity": "200",
+      "category": "fresh fruit",
       "images": "../../assets/images/products/chill.png",
       "description": "everything...",
       "sold": "72",
-      "dateCreated": "2/10/2023"
+      "dateCreated": "2/10/2023",
+      "dateUpdate": "9/10/2023"
     }
   ],
   "categories": [

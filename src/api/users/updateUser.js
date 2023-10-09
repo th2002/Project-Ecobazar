@@ -47,7 +47,7 @@ async function submitUpdateUsers(e) {
 
   // check username exist
   for (let value of listUsers) {
-    if (value.username === username && value.id != userIdData) {
+    if (value.username.toLowerCase() === username.toLowerCase() && value.id != userIdData) {
       Swal.fire({
         icon: "error",
         title: "Error!",
@@ -140,7 +140,7 @@ async function submitUpdateUsers(e) {
     } else {
       Swal.fire({
         icon: "success",
-        title: "Thành công!",
+        title: "Success",
         text: `Update success`,
       });
     }

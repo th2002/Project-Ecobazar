@@ -10,6 +10,13 @@ import getCategories from "../../../src/api/categories/getCategories.js";
 import handleDeleteCate from "../../../src/api/categories/deleteCategories.js";
 import * as updateCate from "../../../src/api/categories/updateCategories.js";
 
+// import component from module products
+import * as addProducts from "../../../src/api/products/addProducts.js";
+import getProducts from "../../../src/api/products/getProducts.js";
+import * as updateProduct from "../../../src/api/products/updateProducts.js";
+import handleDeleteProduct from "../../../src/api/products/deleteProducts.js";
+
+
 const navLinks = document.querySelectorAll(".nav-items");
 
 // Content element
@@ -40,52 +47,6 @@ navLinks.forEach((link, index) => {
     mainContent.innerHTML = listContent[index].innerHTML;
   });
 });
-
-/* Products */
-
-// Get data products
-const data_products = document.getElementById("data_products");
-const apiProducts = "http://localhost:3000/products";
-
-async function fetchProducts() {
-  try {
-    const response = await fetch(apiProducts);
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const json = await response.json();
-    let outputProducts = "";
-    let result = 0;
-    for (let data of json) {
-      outputProducts += `<tr class="border-b-[0.5px] border-gray-400">
-                                    <td class="py-6">${data.id}</td>
-                                    <td>${data.name}</td>
-                                    <td>${data.price}</td>
-                                    <td>${data.prince_sale}</td>
-                                    <td class="quantity_prd">${data.quantity}</td>
-                                    <td><img class="w-28 h-28" src="${data.images}" ></td>
-                                    <td>${data.description}</td>
-                                    <td>${data.sold}</td>
-                                    <td>${data.dateCreated}</td>
-                                    <td class="text-center"><button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button></td>
-                                </tr>`;
-      result += parseInt(data.quantity);
-    }
-
-    data_products.innerHTML = outputProducts;
-
-    // products statistical
-    const countProduct = document.getElementById("count-product");
-    countProduct.innerHTML = result;
-  } catch (error) {
-    console.log("Error fetching data:", error);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  fetchProducts();
-});
-
 
 // Get all bills
 const data_bills = document.getElementById("data_bills");
@@ -226,9 +187,8 @@ modelUpdateUsers.addEventListener("click", (e) => {
 
 // CRUD users
 window.getDataUsers = getUsers.default;
-
-document.addEventListener("DOMContentLoaded", () => {
-  getDataUsers();
+document.addEventListener("DOMContentLoaded", event => {
+  getDataUsers(event);
 });
 
 window.ShowFormAddUser = addUser.ShowFormAddUser;
@@ -271,3 +231,34 @@ window.ShowFormCate = updateCate.ShowFormCate;
 window.submitUpdateCate = updateCate.default;
 window.handleDeleteCate = handleDeleteCate;
 
+
+// Model products form
+const modelSubmitProducts = document.getElementById("modelSubmitProducts");
+const modelUpdateProducts = document.getElementById("modelUpdateProducts");
+
+// Close model add products form
+modelSubmitProducts.addEventListener("click", (e) => {
+  if (e.target === modelSubmitProducts) {
+    modelSubmitProducts.classList.add("hidden");
+  }
+});
+
+// Close model update products form
+modelUpdateProducts.addEventListener("click", (e) => {
+  if (e.target === modelUpdateProducts) {
+    modelUpdateProducts.classList.add("hidden");
+  }
+});
+
+// CRUD products
+window.getProducts = getProducts;
+
+document.addEventListener("DOMContentLoaded", () => {
+  getProducts();
+});
+
+window.ShowFormAddProducts = addProducts.ShowFormAddProducts;
+window.submitAddProducts = addProducts.default;
+window.ShowUpdateProductForm = updateProduct.ShowUpdateProductForm;
+window.submitUpdateProduct = updateProduct.default;
+window.handleDeleteProduct = handleDeleteProduct;

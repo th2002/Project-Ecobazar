@@ -1,7 +1,8 @@
 export const data_user = document.getElementById("data_user");
 export const apiUsers = "http://localhost:3000/users";
 
-async function fetchData_users() {
+async function fetchData_users(e) {
+  e.preventDefault();
   try {
     const response = await fetch(apiUsers);
 
@@ -26,7 +27,7 @@ async function fetchData_users() {
                         <td class="text-center">
                             <button type="button" onclick="handleDeleteUser(${
         data.id
-      })" data-id="${
+      },event)" data-id="${
         data.id
       }" class="w-16 h-8 mr-2 text-white bg-yellow-500 rounded-md delete-btn">Delete</button>
                             <button onclick="ShowFormUpdateUser(${

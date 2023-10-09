@@ -21,7 +21,7 @@ async function getCategories() {
                               data.id
                             })" data-id="${
         data.id
-      }" class="w-16 h-8 mr-2 text-white bg-purple-500 rounded-md delete-btn">Delete</button>
+      }" class="w-16 h-8 mr-2 text-white bg-yellow-500 rounded-md delete-btn">Delete</button>
                                         <button onclick="ShowFormCate(${data.id})" class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
                                     </td>
                                 </tr>`;

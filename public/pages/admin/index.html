@@ -309,7 +309,8 @@
               List of products
             </h2>
             <button
-              class="w-[120px] h-10 rounded-[4px] bg-pink-400 px-2 py-1 text-white mb-8">
+              onclick="ShowFormAddProducts()"
+              class="w-[120px] h-10 rounded-[4px] bg-pink-400 hover:bg-opacity-80 px-2 py-1 text-white mb-8">
               Add Product
             </button>
             <table class="w-full table-auto">
@@ -320,10 +321,12 @@
                   <th>Price</th>
                   <th>Prince sale</th>
                   <th>Quantity</th>
+                  <th>Category</th>
                   <th>Image</th>
                   <th>Description</th>
                   <th>Sold</th>
-                  <th>Date add</th>
+                  <th>Date created</th>
+                  <th>Date update</th>
                   <th class="text-center">Action</th>
                 </tr>
               </thead>
@@ -716,6 +719,253 @@
               <button
                 type="submit"
                 class="px-4 py-2 mt-4 text-white bg-pink-500 rounded-lg">
+                Update
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Model product form -->
+      <div id="modelSubmitProducts" class="hidden model">
+        <form
+          onsubmit="submitAddProducts(event)"
+          id="productForm"
+          class="absolute w-[80%] h-[90%] bg-white left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 rounded-lg">
+          <div class="p-8">
+            <h1
+              class="text-4xl font-semibold tracking-[2px] uppercase text-admin-content-400">
+              Add Products
+            </h1>
+
+            <div class="flex flex-wrap gap-8 mt-8">
+              <div class="w-full">
+                <label
+                  class="font-medium text-admin-content-500"
+                  for="productName"
+                  >Name</label
+                >
+                <input
+                  spellcheck="false"
+                  name="productName"
+                  id="productName"
+                  type="text"
+                  placeholder="Vegetable"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[31.4%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="price"
+                  >Price</label
+                >
+                <input
+                  spellcheck="false"
+                  name="price"
+                  id="price"
+                  autocomplete="password"
+                  type="text"
+                  placeholder="15000"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[31.4%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="price_sale"
+                  >Price sale</label
+                >
+                <input
+                  spellcheck="false"
+                  name="price_sale"
+                  id="price_sale"
+                  type="text"
+                  placeholder="4000"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[31.4%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="productQuantity"
+                  >Quantity</label
+                >
+                <input
+                  spellcheck="false"
+                  name="productQuantity"
+                  id="productQuantity"
+                  type="text"
+                  placeholder="100"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[48.5%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="productImages"
+                  >images</label
+                >
+                <input
+                  spellcheck="false"
+                  name="productImages"
+                  id="productImages"
+                  type="file"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[48.5%]">
+                <label class="font-medium text-admin-content-500" for="role"
+                  >Category</label
+                >
+                <select
+                  name="category"
+                  id="category"
+                  class="block w-full px-3 py-3 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500">
+                  <option value="vegetable">vegetable</option>
+                  <option value="fresh fruit">fresh fruit</option>
+                  <option value="snack">snack</option>
+                  <option value="cooking">cooking</option>
+                  <option value="meat and fish">meat and fish</option>
+                </select>
+              </div>
+              <div class="w-full">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="productDescription"
+                  >Description</label
+                >
+                <textarea
+                  spellcheck="false"
+                  name="productDescription"
+                  id="productDescription"
+                  rows="3"
+                  placeholder="everything..."
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset"></textarea>
+              </div>
+            </div>
+            <div class="flex justify-end w-full mt-8">
+              <button
+                type="submit"
+                class="px-4 py-2 mt-4 text-white bg-pink-500 rounded-lg hover:bg-opacity-80">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="modelUpdateProducts" class="hidden model">
+        <form
+          onsubmit="submitUpdateProduct(event)"
+          id="productUpdateForm"
+          class="absolute w-[80%] h-[90%] bg-white left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 rounded-lg">
+          <div class="p-8">
+            <h1
+              class="text-4xl font-semibold tracking-[2px] uppercase text-admin-content-400">
+              Update Products <span id="productIdData" class=""></span>
+            </h1>
+
+            <div class="flex flex-wrap gap-8 mt-8">
+              <div class="w-full">
+                <label
+                  class="font-medium text-admin-content-500"
+                  for="productUpdateName"
+                  >Name</label
+                >
+                <input
+                  spellcheck="false"
+                  name="productUpdateName"
+                  id="productUpdateName"
+                  type="text"
+                  placeholder="Vegetable"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[31.4%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="priceUpdate"
+                  >Price</label
+                >
+                <input
+                  spellcheck="false"
+                  name="priceUpdate"
+                  id="priceUpdate"
+                  autocomplete="password"
+                  type="text"
+                  placeholder="15000"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[31.4%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="price_saleUpdate"
+                  >Price sale</label
+                >
+                <input
+                  spellcheck="false"
+                  name="price_saleUpdate"
+                  id="price_saleUpdate"
+                  type="text"
+                  placeholder="4000"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[31.4%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="productUpdateQuantity"
+                  >Quantity</label
+                >
+                <input
+                  spellcheck="false"
+                  name="productUpdateQuantity"
+                  id="productUpdateQuantity"
+                  type="text"
+                  placeholder="100"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[48.5%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="productUpdateImages"
+                  >images</label
+                >
+                <input
+                  spellcheck="false"
+                  name="productUpdateImages"
+                  id="productUpdateImages"
+                  type="file"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[48.5%]">
+                <label
+                  class="font-medium text-admin-content-500"
+                  for="categoryProductUpdate"
+                  >Category</label
+                >
+                <select
+                  name="categoryProductUpdate"
+                  id="categoryProductUpdate"
+                  class="block w-full px-3 py-3 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500">
+                  <option value="vegetable">vegetable</option>
+                  <option value="fresh fruit">fresh fruit</option>
+                  <option value="snack">snack</option>
+                  <option value="cooking">cooking</option>
+                  <option value="meat and fish">meat and fish</option>
+                </select>
+              </div>
+              <div class="w-full">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="productUpdateDescription"
+                  >Description</label
+                >
+                <textarea
+                  spellcheck="false"
+                  name="productUpdateDescription"
+                  id="productUpdateDescription"
+                  rows="3"
+                  placeholder="everything..."
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset"></textarea>
+              </div>
+            </div>
+            <div class="flex justify-end w-full mt-8">
+              <button
+                type="submit"
+                class="px-4 py-2 mt-4 text-white bg-pink-500 rounded-lg hover:bg-opacity-80">
                 Update
               </button>
             </div>

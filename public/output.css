@@ -720,6 +720,10 @@ video {
   top: 72px;
 }
 
+.left-\[40\%\]{
+  left: 40%;
+}
+
 .z-40{
   z-index: 40;
 }
@@ -1011,6 +1015,10 @@ video {
   height: 100%;
 }
 
+.h-\[60\%\]{
+  height: 60%;
+}
+
 .max-h-\[300px\]{
   max-height: 300px;
 }
@@ -1077,6 +1085,42 @@ video {
 
 .w-px{
   width: 1px;
+}
+
+.w-\[47\%\]{
+  width: 47%;
+}
+
+.w-\[48\%\]{
+  width: 48%;
+}
+
+.w-\[47\.5\%\]{
+  width: 47.5%;
+}
+
+.w-\[80\%\]{
+  width: 80%;
+}
+
+.w-\[29\%\]{
+  width: 29%;
+}
+
+.w-\[32\%\]{
+  width: 32%;
+}
+
+.w-\[31\.5\%\]{
+  width: 31.5%;
+}
+
+.w-\[31\.4\%\]{
+  width: 31.4%;
+}
+
+.w-\[48\.5\%\]{
+  width: 48.5%;
 }
 
 .basis-1\/12{
@@ -1414,11 +1458,6 @@ video {
 .bg-yellow-500{
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
-}
-
-.bg-purple-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(168 85 247 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\.\/assets\/images\/background\/bannar1\.png\'\)\]{
@@ -2400,6 +2439,18 @@ video {
   background-color: rgb(44 116 47 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-opacity-5:hover{
+  --tw-bg-opacity: 0.05;
+}
+
+.hover\:bg-opacity-50:hover{
+  --tw-bg-opacity: 0.5;
+}
+
+.hover\:bg-opacity-80:hover{
+  --tw-bg-opacity: 0.8;
+}
+
 .hover\:fill-red-600:hover{
   fill: #dc2626;
 }
@@ -2411,6 +2462,10 @@ video {
 .hover\:text-white:hover{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:opacity-50:hover{
+  opacity: 0.5;
 }
 
 .hover\:after\:w-full:hover::after{
