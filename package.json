@@ -2,7 +2,7 @@
   "name": "project-ecobazar",
   "version": "1.0.0",
   "description": "Project-Shopery",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./public/output.css --watch",
     "start-json": "json-server --watch public/data/db.json"

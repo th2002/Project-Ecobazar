@@ -16,6 +16,12 @@ import getProducts from "../../../src/api/products/getProducts.js";
 import * as updateProduct from "../../../src/api/products/updateProducts.js";
 import handleDeleteProduct from "../../../src/api/products/deleteProducts.js";
 
+// import component from module blogs
+import * as addBlogs from "../../../src/api/blog/addBlog.js";
+import getBlogs from "../../../src/api/blog/getBlog.js";
+import * as updateblog from "../../../src/api/blog/updateBlog.js";
+import handleDeleteBlog from "../../../src/api/blog/deleteBlog.js";
+
 
 const navLinks = document.querySelectorAll(".nav-items");
 
@@ -102,45 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchBills();
 });
 
-// Get all blogs
-const data_blogs = document.getElementById("data_blogs");
-const apiBlogs = "http://localhost:3000/blogs";
-
-async function fetchBlogs() {
-  try {
-    const response = await fetch(apiBlogs);
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const json = await response.json();
-    let outputBlogs = "";
-    for (let data of json) {
-      outputBlogs += `<tr class="border-b-[0.5px] border-gray-400">
-                                <td class="py-14">${data.id}</td>
-                                <td>${data.title}</td>
-                                <td>${data.author}</td>
-                                <td>${data.status}</td>
-                                <td>${data.category}</td>
-                                <td>${data.views}</td>
-                                <td>${data.comments}</td>
-                                <td><img class="w-28 h-28" src="${data.thumnail}"></td>
-                                <td>${data.dateCreated}</td>
-                                <td class="text-center">
-                                    <button class="w-16 h-8 text-white bg-red-500 rounded-md">Edit</button>
-                                </td>
-                            </tr>`;
-    }
-
-    data_blogs.innerHTML = outputBlogs;
-  } catch (error) {
-    console.log("Error fetching data:", error);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  fetchBlogs();
-});
-
 // library statictiscal
 const ctx = document.getElementById("myChart");
 
@@ -200,7 +167,7 @@ window.handleDeleteUser = handleDeleteUser;
 
 
 
-// model cate form
+// Model cate form
 const modelSubmitCate = document.getElementById("modelSubmitCate");
 const modelUpdateCate = document.getElementById("modelUpdateCate");
 
@@ -262,3 +229,35 @@ window.submitAddProducts = addProducts.default;
 window.ShowUpdateProductForm = updateProduct.ShowUpdateProductForm;
 window.submitUpdateProduct = updateProduct.default;
 window.handleDeleteProduct = handleDeleteProduct;
+
+
+// Model blog form
+const modelSubmitBlogs = document.getElementById("modelSubmitBlogs");
+const modelUpdateBlogs = document.getElementById("modelUpdateBlogs");
+
+// Close model add blog form
+modelSubmitBlogs.addEventListener("click", (e) => {
+  if (e.target === modelSubmitBlogs) {
+    modelSubmitBlogs.classList.add("hidden");
+  }
+});
+
+// Close model update blog form
+modelUpdateBlogs.addEventListener("click", (e) => {
+  if (e.target === modelUpdateBlogs) {
+    modelUpdateBlogs.classList.add("hidden");
+  }
+});
+
+// CRUD blogs
+window.getBlogs = getBlogs;
+
+document.addEventListener("DOMContentLoaded", () => {
+  getBlogs();
+});
+
+window.ShowFormAddBlogs = addBlogs.ShowFormAddBlogs;
+window.submitAddBlogs = addBlogs.default;
+window.ShowFormUpdateBlog = updateblog.ShowFormUpdateBlog;
+window.submitUpdateBlog = updateblog.default;
+window.handleDeleteBlog = handleDeleteBlog;

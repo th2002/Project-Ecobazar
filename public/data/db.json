@@ -11,18 +11,6 @@
       "dateCreated": "6/10/2023",
       "dateUpdate": "8/10/2023",
       "userIdData": "1"
-    },
-    {
-      "id": 2,
-      "username": "mt123",
-      "password": "123456",
-      "fullname": "Mỹ Tiên",
-      "address": "Thảo Điền, Quận 2",
-      "phone": "0906757332",
-      "role": "customer",
-      "dateCreated": "9/10/2023",
-      "dateUpdate": "9/10/2023",
-      "userIdData": "2"
     }
   ],
   "products": [
@@ -190,7 +178,7 @@
       "category": "Healthy Eating",
       "views": 4000,
       "comments": 6500,
-      "thumnail": "../../assets/images/latest-news/Image1.png",
+      "thumbnail": "../../assets/images/latest-news/Image1.png",
       "dateCreated": "2/10/2023"
     },
     {
@@ -201,41 +189,42 @@
       "category": "Healthy Eating",
       "views": 1200,
       "comments": 3200,
-      "thumnail": "../../assets/images/latest-news/Image2.png",
+      "thumbnail": "../../assets/images/latest-news/Image2.png",
       "dateCreated": "2/10/2023"
     },
     {
       "id": 3,
       "title": "My blog",
       "author": "admin",
-      "status": "Show",
+      "status": "show",
       "category": "Healthy Eating",
       "views": 803,
       "comments": 1235,
-      "thumnail": "../../assets/images/latest-news/Image3.png",
+      "thumbnail": "../../assets/images/latest-news/Image3.png",
       "dateCreated": "2/10/2023"
     },
     {
       "id": 4,
       "title": "My blog",
       "author": "admin",
-      "status": "Show",
+      "status": "show",
       "category": "Healthy Eating",
       "views": 563,
       "comments": 650,
-      "thumnail": "../../assets/images/latest-news/Image4.jpg",
+      "thumbnail": "../../assets/images/latest-news/Image4.jpg",
       "dateCreated": "2/10/2023"
     },
     {
       "id": 5,
-      "title": "My blog",
+      "title": "Hello my blog",
       "author": "admin",
-      "status": "Show",
+      "status": "show",
       "category": "Healthy Eating",
       "views": 825,
       "comments": 985,
-      "thumnail": "../../assets/images/latest-news/Image5.jpg",
-      "dateCreated": "2/10/2023"
+      "thumbnail": "../../assets/images/latest-news/Image7.jpg",
+      "dateCreated": "2/10/2023",
+      "dateUpdate": "10/10/2023"
     }
   ]
 }

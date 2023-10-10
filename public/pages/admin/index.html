@@ -399,7 +399,8 @@
             class="border rounded-2xl bg-white shadow-[0_0_2rem_0_rgba(136,152,170,.15)] w-full h-[90%] p-4">
             <h2 class="mb-4 text-xl text-admin-content-500">List of Blog</h2>
             <button
-              class="w-[120px] h-10 rounded-[4px] bg-pink-400 px-2 py-1 text-white mb-8">
+              onclick="ShowFormAddBlogs()"
+              class="w-[120px] h-10 rounded-[4px] bg-pink-400 hover:bg-opacity-80 px-2 py-1 text-white mb-8">
               Add Blog
             </button>
             <table class="w-full table-auto">
@@ -414,6 +415,7 @@
                   <th>Comments</th>
                   <th>Thumbnail</th>
                   <th>Date created</th>
+                  <th>Date update</th>
                   <th class="text-center">Action</th>
                 </tr>
               </thead>
@@ -960,6 +962,189 @@
                   rows="3"
                   placeholder="everything..."
                   class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset"></textarea>
+              </div>
+            </div>
+            <div class="flex justify-end w-full mt-8">
+              <button
+                type="submit"
+                class="px-4 py-2 mt-4 text-white bg-pink-500 rounded-lg hover:bg-opacity-80">
+                Update
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Model blog form -->
+      <div id="modelSubmitBlogs" class="hidden model">
+        <form
+          onsubmit="submitAddBlogs(event)"
+          id="addBlogForm"
+          class="absolute w-[80%] bg-white left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 rounded-lg">
+          <div class="p-8">
+            <h1
+              class="text-4xl font-semibold tracking-[2px] uppercase text-admin-content-400">
+              Add Blogs
+            </h1>
+
+            <div class="flex flex-wrap gap-8 mt-8">
+              <div class="w-full">
+                <label class="font-medium text-admin-content-500" for="title"
+                  >Title</label
+                >
+                <input
+                  spellcheck="false"
+                  name="title"
+                  id="title"
+                  type="text"
+                  placeholder="My blog..."
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[48.5%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="author"
+                  >Author</label
+                >
+                <input
+                  spellcheck="false"
+                  name="author"
+                  id="author"
+                  type="text"
+                  placeholder="Admin"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[48.5%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="status"
+                  >Status</label
+                >
+                <select
+                  name="status"
+                  id="status"
+                  class="block w-full px-3 py-3 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500">
+                  <option value="show">Show</option>
+                  <option value="hidden">Hidden</option>
+                </select>
+              </div>
+              <div class="w-[48.5%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="blogCategory"
+                  >Category blog</label
+                >
+                <input
+                  spellcheck="false"
+                  name="blogCategory"
+                  id="blogCategory"
+                  type="text"
+                  placeholder="Healthy blog.."
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[48.5%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="thumbnail"
+                  >Thumbnail</label
+                >
+                <input
+                  spellcheck="false"
+                  name="thumbnail"
+                  id="thumbnail"
+                  type="file"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+            </div>
+            <div class="flex justify-end w-full mt-8">
+              <button
+                type="submit"
+                class="px-4 py-2 mt-4 text-white bg-pink-500 rounded-lg hover:bg-opacity-80">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="modelUpdateBlogs" class="hidden model">
+        <form
+          onsubmit="submitUpdateBlog(event)"
+          id="updateBlogForm"
+          class="absolute w-[80%] bg-white left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 rounded-lg">
+          <div class="p-8">
+            <h1
+              class="text-4xl font-semibold tracking-[2px] uppercase text-admin-content-400">
+              Update Blogs <span id="blogId"></span>
+            </h1>
+
+            <div class="flex flex-wrap gap-8 mt-8">
+              <div class="w-full">
+                <label
+                  class="font-medium text-admin-content-500"
+                  for="titleUpdate"
+                  >Title</label
+                >
+                <input
+                  spellcheck="false"
+                  name="titleUpdate"
+                  id="titleUpdate"
+                  type="text"
+                  placeholder="My blog..."
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[48.5%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="authorUpdate"
+                  >Author</label
+                >
+                <input
+                  spellcheck="false"
+                  name="authorUpdate"
+                  id="authorUpdate"
+                  type="text"
+                  placeholder="Admin"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[48.5%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="statusUpdate"
+                  >Status</label
+                >
+                <select
+                  name="statusUpdate"
+                  id="statusUpdate"
+                  class="block w-full px-3 py-3 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500">
+                  <option value="show">show</option>
+                  <option value="hidden">hidden</option>
+                </select>
+              </div>
+              <div class="w-[48.5%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="blogCategoryUpdate"
+                  >Category blog</label
+                >
+                <input
+                  spellcheck="false"
+                  name="blogCategoryUpdate"
+                  id="blogCategoryUpdate"
+                  type="text"
+                  placeholder="Healthy blog.."
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
+              </div>
+              <div class="w-[48.5%]">
+                <label
+                  class="font-medium cursor-pointer text-admin-content-500"
+                  for="thumbnailUpdate"
+                  >Thumbnail</label
+                >
+                <input
+                  spellcheck="false"
+                  name="thumbnailUpdate"
+                  id="thumbnailUpdate"
+                  type="file"
+                  class="block w-full px-3 py-2 mt-3 border-0 rounded-lg outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-inset" />
               </div>
             </div>
             <div class="flex justify-end w-full mt-8">
