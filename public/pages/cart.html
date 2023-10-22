@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organic eCommerce</title>
+    <!-- Link favicon -->
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon/favicon-shop.png"
+      type="image/x-icon" />
+    <!-- Link css tailwind -->
+    <link rel="stylesheet" href="../output.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="w-full text-base content-warpper font-Poppins">
+        <header id="header"></header>
+
+        <main>
+          <div class="relative">
+            <img
+              class="h-[120px] w-full object-cover"
+              src="../assets/images/banners/Banner4.png"
+              alt="thumbnail" />
+
+            <!-- Link -->
+            <div
+              class="flex flex-row items-center gap-4 absolute top-[48px] left-[200px] w-[300px]">
+              <a href="../index.html">
+                <svg
+                  class="flex basis-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none">
+                  <path
+                    d="M4.00012 10L12.0001 3L20.0001 10V20H15.0001V16C15.0001 15.2044 14.6841 14.4413 14.1214 13.8787C13.5588 13.3161 12.7958 13 12.0001 13C11.2045 13 10.4414 13.3161 9.8788 13.8787C9.31619 14.4413 9.00012 15.2044 9.00012 16V20H4.00012V10Z"
+                    stroke="#808080"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+
+              <svg
+                class="basis-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="6"
+                height="10"
+                viewBox="0 0 6 10"
+                fill="none">
+                <path
+                  d="M1 0.916341L5.08333 4.99967L1 9.08301"
+                  stroke="#999999"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+              <a
+                class="text-success leading-[1.5] basis-2/3"
+                href="./signIn.html"
+                >My Shopping Cart</a
+              >
+            </div>
+
+            <div class="mx-[10.41%] mt-20 mb-20">
+              <div class="flex items-center justify-center mb-10">
+                <h1 class="text-[32px] text-content-900 font-semibold">
+                  My Shopping Cart
+                </h1>
+              </div>
+
+              <div class="flex flex-row gap-4 mb-8">
+                <table
+                  id="formItemProduct"
+                  class="table-fixed border border-collapse border-content-100 rounded-xl h-[371px] basis-2/3">
+                  <thead>
+                    <tr>
+                      <th
+                        class="font-medium text-sm text-content-500 tracking-[0.42px] uppercase text-left py-4 pl-4 w-[45%]">
+                        Product
+                      </th>
+                      <th
+                        class="font-medium text-sm text-content-500 tracking-[0.42px] uppercase text-left">
+                        Price
+                      </th>
+                      <th
+                        class="font-medium text-sm text-content-500 tracking-[0.42px] uppercase text-left">
+                        Quantity
+                      </th>
+                      <th
+                        class="font-medium text-sm text-content-500 tracking-[0.42px] uppercase text-left">
+                        SubTotal
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="contentForm"></tbody>
+                </table>
+
+                <div
+                  class="h-[291px] basis-1/3 border border-content-100 rounded-lg p-3">
+                  <h1 class="text-xl font-medium text-content-900">
+                    Cart Total
+                  </h1>
+                  <div
+                    id="layoutTotal"
+                    class="grid grid-rows-3 h-[141px] mt-4 mb-6">
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-content-700">Subtotal</span>
+                      <span class="font-medium text-content-900">$84.00</span>
+                    </div>
+                    <div
+                      class="flex items-center justify-between text-sm border-t border-b">
+                      <span class="text-content-700">Shipping:</span>
+                      <span class="font-medium text-content-900">Free</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-content-700">Total:</span>
+                      <span class="font-semibold text-content-900">$84.00</span>
+                    </div>
+                  </div>
+                  <button
+                    onclick="goCheckOut()"
+                    class="w-full bg-success h-[49px] rounded-full py-3 px-8 text-white font-semibold hover:bg-opacity-75">
+                    Proceed to checkout
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <footer class="footer"></footer>
+      </div>
+
+      <!-- Model cart -->
+      <div
+        id="model_cart"
+        class="fixed top-0 bottom-0 left-0 right-0 z-50 hidden w-full h-full bg-black model_cart bg-opacity-80">
+        <div
+          class="animate-formRegister fixed top-0 bottom-0 right-0 w-[23.75%] bg-white p-[2%]">
+          <div class="flex flex-row justify-between mb-3">
+            <h1 class="text-xl text-content-900 font-medium leading-[1.5]">
+              Shopping Card
+            </h1>
+            <svg
+              id="closeModelCart"
+              class="cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none">
+              <path
+                d="M18.75 6.25L6.25 18.75"
+                stroke="#1A1A1A"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M6.25 6.25L18.75 18.75"
+                stroke="#1A1A1A"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+
+          <div
+            id="displayCart"
+            class="flex flex-col overflow-y-auto h-[74%] text-content-900 product_cart"></div>
+
+          <div
+            id="total"
+            class="flex items-center justify-between py-[2.2%] h-[6.6%] text-content-900">
+            <span class="leading-[1.5]">4 products</span>
+            <span class="font-semibold leading-[1.2]">$26</span>
+          </div>
+
+          <button
+            onclick="goCheckOut()"
+            class="mb-3 px-[3.7%] py-[1.48%] rounded-full bg-success text-white font-semibold leading-[1.2] w-full h-[4.62%] hover:bg-opacity-75">
+            Checkout
+          </button>
+          <button
+            onclick="goCart()"
+            id="btn_GoToCart"
+            class="px-[3.7%] py-[1.48%] rounded-full bg-[rgba(86,172,89,0.10)] text-success font-semibold leading-[1.2] w-full h-[4.62%] hover:bg-gray-300 hover:bg-opacity-75">
+            Go To Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="../../src/service/cart.js"></script>
+  </body>
+</html>

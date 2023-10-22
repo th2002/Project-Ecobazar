@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -9,135 +9,160 @@
 /* index */
 
 .tw-menu-items {
-    @apply flex justify-center items-center basis-2/6 hover:text-content-800 cursor-pointer
+  @apply flex justify-center items-center basis-2/6 hover:text-content-800 cursor-pointer
     relative py-1 after:bg-success after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
     hover:after:w-full after:transition-all after:ease-linear after:duration-300;
 }
 
 .featured-items {
-    @apply flex items-center justify-center gap-4 mb-20 flex-col basis-1/4 py-10 cursor-pointer border-b-[1px] border-content-400
+  @apply flex items-center justify-center gap-4 mb-20 flex-col basis-1/4 py-10 cursor-pointer border-b-[1px] border-content-400
     relative after:absolute after:bg-success after:bottom-0 after:left-0 after:w-0 after:h-1
     hover:after:w-full after:transition-all after:ease-linear after:duration-300;
 }
 
 .nav-header {
-    @apply flex flex-row items-center py-4 text-sm font-medium shadow-neutral-200 text-content-600 mx-[200px];
+  @apply flex flex-row items-center py-4 text-sm font-medium shadow-neutral-200 text-content-600 mx-[200px];
 }
 
 .banner-marketing {
-    @apply flex relative bg-banner bg-cover bg-no-repeat bg-center h-[600px] mb-4;
+  @apply flex relative bg-banner bg-cover bg-no-repeat bg-center h-[600px] mb-4;
 }
 
 .featured-products-header {
-    @apply flex items-center justify-between mx-[200px] mb-8;
+  @apply flex items-center justify-between mx-[200px] mb-8;
 }
 
 .card-product {
-    @apply relative overflow-hidden transition-all ease-linear duration-200 shadow-lg hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark rounded-lg border h-[350px]
+  @apply relative w-[22.7%] overflow-hidden transition-all ease-linear duration-200 shadow-lg hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark rounded-lg border h-[350px];
 }
 
 .add-card {
-    @apply absolute justify-center items-center w-10 h-10 top-[280px] right-5;
+  @apply absolute justify-center items-center w-10 h-10 top-[280px] right-5;
 }
 
 .add-card-items {
-    @apply flex items-center transition-all ease-linear duration-200 bg-[#F2F2F2] justify-center w-full h-full rounded-full;
+  @apply flex items-center transition-all ease-linear duration-200 bg-[#F2F2F2] justify-center w-full h-full rounded-full;
 }
 
 .shop-categories {
-    @apply mt-24 bg-cover bg-center bg-no-repeat bg-[url('./assets/images/background/cate.png')] bg-[#EDF2EE];
+  @apply mt-24 bg-cover bg-center bg-no-repeat bg-[url('./assets/images/background/cate.png')] bg-[#EDF2EE];
 }
 
 .shop-categories-header {
-    @apply flex items-center justify-between mx-[200px] pt-20 mb-16;
+  @apply flex items-center justify-between mx-[200px] pt-20 mb-16;
 }
 
 .shop-categories-card {
-    @apply relative hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success transition-all ease-linear duration-200 justify-center w-[200px] h-[200px] bg-white rounded-[6px] border;
+  @apply relative hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success transition-all ease-linear duration-200 justify-center w-[200px] h-[200px] bg-white rounded-[6px] border;
 }
 
 .why-choose-us {
-    @apply w-full h-[620px] bg-center bg-cover bg-no-repeat bg-[url('./assets/images/background/catagories.png')];
+  @apply w-full h-[620px] bg-center bg-cover bg-no-repeat bg-[url('./assets/images/background/catagories.png')];
 }
 
 .feature-banner {
-    @apply h-[330px] bg-cover bg-no-repeat bg-center bg-[url('./assets/images/banners/Banner4.png')];
+  @apply h-[330px] bg-cover bg-no-repeat bg-center bg-[url('./assets/images/banners/Banner4.png')];
 }
 
 .bannar {
-    @apply bg-center bg-cover bg-no-repeat bg-[url('./assets/images/background/bannar3.png')];
+  @apply bg-center bg-cover bg-no-repeat bg-[url('./assets/images/background/bannar3.png')];
 }
 
 .bannar-frame {
-    @apply h-[520px] mx-[200px] grid items-center grid-cols-2 gap-4;
+  @apply h-[520px] mx-[200px] grid items-center grid-cols-2 gap-4;
 }
 
 .bannar-frame-items {
-    @apply flex items-center w-auto h-[360px] rounded-xl bg-cover bg-center bg-no-repeat;
+  @apply flex items-center w-auto h-[360px] rounded-xl bg-cover bg-center bg-no-repeat;
 }
 
 .featured-best-seller {
-    @apply relative overflow-hidden  transition-all ease-linear duration-200 shadow-lg hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark rounded-lg border h-[350px];
+  @apply relative overflow-hidden  transition-all ease-linear duration-200 shadow-lg hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark rounded-lg border h-[350px];
 }
 
 .hot-deal-items {
-    @apply relative transition-all ease-linear duration-300 overflow-hidden hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark row-span-2 border rounded-[6px]
+  @apply relative transition-all ease-linear duration-300 overflow-hidden hover:shadow-[0_0_12px_0_rgba(32,181,38,0.32)] hover:border-success-dark row-span-2 border rounded-[6px];
 }
 
 .latest-news {
-    @apply bg-center bg-cover bg-no-repeat bg-[#F2F2F2] bg-[url('./assets/images/background/bg-latest-news.png')] h-[764px] w-full
+  @apply bg-center bg-cover bg-no-repeat bg-[#F2F2F2] bg-[url('./assets/images/background/bg-latest-news.png')] h-[764px] w-full;
 }
 
 .latest-news-items {
-    @apply relative rounded-lg w-[320px] bg-white;
+  @apply relative rounded-lg w-[320px] bg-white;
 }
 
 .testimonials {
-    @apply bg-center bg-cover bg-no-repeat bg-[#EDF2EE] bg-[url('./assets/images/background/testimonials.png')] h-[504px];
+  @apply bg-center bg-cover bg-no-repeat bg-[#EDF2EE] bg-[url('./assets/images/background/testimonials.png')] h-[504px];
 }
 
 .testimonials-items {
-    @apply  bg-white hover:shadow-[0_10px_20px_0_rgba(0,0,0,0.1)] rounded-lg shadow-white h-[250px];
+  @apply bg-white hover:shadow-[0_10px_20px_0_rgba(0,0,0,0.1)] rounded-lg shadow-white h-[250px];
 }
 
 .footer {
-    @apply h-[400px] bg-[url('./assets/images/background/BG-footer.png')] bg-content-900  bg-cover bg-center bg-no-repeat
+  @apply h-[400px] bg-[url('./assets/images/background/BG-footer.png')] bg-content-900  bg-cover bg-center bg-no-repeat;
 }
 
 .model {
-    @apply fixed top-0 left-0 bottom-0 right-0 bg-black bg-opacity-80 z-50;
+  @apply fixed top-0 left-0 bottom-0 right-0 bg-black bg-opacity-80 z-50;
 }
 
 .model-frame {
-    @apply flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[870px] bg-white rounded-lg;
+  @apply flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[870px] bg-white rounded-lg;
 }
 
 .model-img {
-    @apply bg-cover bg-top bg-no-repeat w-[354px] h-[380px] bg-[url('./assets/images/background/bg-model.jpg')] rounded-md;
+  @apply bg-cover bg-top bg-no-repeat w-[354px] h-[380px] bg-[url('./assets/images/background/bg-model.jpg')] rounded-md;
 }
 
 /* Admin */
 
 .root {
-    @apply relative h-[1050px] bg-[#f8f9fa] font-OpenSans;
+  @apply relative h-[1050px] bg-[#f8f9fa] font-OpenSans;
 }
 
 .sidenav {
-    @apply fixed flex flex-col left-6 top-4 bottom-4 w-[250px] bg-white rounded-[1rem] shadow-[0_0_2rem_0_rgba(136,152,170,.15)] pb-2;
+  @apply fixed flex flex-col left-6 top-4 bottom-4 w-[250px] bg-white rounded-[1rem] shadow-[0_0_2rem_0_rgba(136,152,170,.15)] pb-2;
 }
 
 .sidenav-header {
-    @apply flex items-center h-[80px] w-full border-b-[1px] p-5;
+  @apply flex items-center h-[80px] w-full border-b-[1px] p-5;
 }
 
 .nav-links {
-    @apply flex flex-col h-[500px] mt-[14px] px-2
+  @apply flex flex-col h-[500px] mt-[14px] px-2;
 }
 
 .nav-items {
-    @apply flex items-center basis-1/6 p-5 h-[53px]
+  @apply flex items-center basis-1/6 p-5 h-[53px];
 }
 
 .container-account {
+}
 
+.imagesList {
+  @apply h-28 w-28;
+}
+
+/* Sign in */
+.input-active {
+  @apply bg-white left-3 top-[-5px] scale-75;
+}
+
+input[type="text"]:focus ~ .input-text {
+  @apply bg-white left-3 top-[-5px] scale-75;
+}
+
+input[type="password"]:focus ~ .input-text {
+  @apply bg-white left-3 top-[-5px] scale-75;
+}
+
+/* product detail */
+.active_satus {
+  @apply after:bg-success after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 text-content-900 font-medium;
+}
+
+.hover_satus {
+  @apply after:bg-success after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 hover:after:w-full after:transition-all after:ease-linear after:duration-300 hover:text-content-900 hover:font-medium;
 }

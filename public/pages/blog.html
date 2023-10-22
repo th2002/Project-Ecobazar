@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organic eCommerce</title>
+    <!-- Link favicon -->
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon/favicon-shop.png"
+      type="image/x-icon" />
+    <!-- Link css tailwind -->
+    <link rel="stylesheet" href="../output.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="w-full text-base content-warpper font-Poppins">
+        <header id="header"></header>
+
+        <main>
+          <div class="relative">
+            <img
+              class="h-[120px] w-full object-cover"
+              src="../assets/images/banners/Banner4.png"
+              alt="thumbnail" />
+
+            <!-- Link -->
+            <div
+              class="flex flex-rows-5 items-center gap-4 absolute top-[48px] left-[200px] w-[300px]">
+              <a href="../index.html">
+                <svg
+                  class="flex basis-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none">
+                  <path
+                    d="M4.00012 10L12.0001 3L20.0001 10V20H15.0001V16C15.0001 15.2044 14.6841 14.4413 14.1214 13.8787C13.5588 13.3161 12.7958 13 12.0001 13C11.2045 13 10.4414 13.3161 9.8788 13.8787C9.31619 14.4413 9.00012 15.2044 9.00012 16V20H4.00012V10Z"
+                    stroke="#808080"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+
+              <svg
+                class="basis-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="6"
+                height="10"
+                viewBox="0 0 6 10"
+                fill="none">
+                <path
+                  d="M1 0.916341L5.08333 4.99967L1 9.08301"
+                  stroke="#999999"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+              <a class="text-success leading-[1.5] basis-2/5" href="#"
+                >404 Error Page</a
+              >
+            </div>
+          </div>
+
+          <!-- 404 -->
+          <div class="flex justify-center items-center w-full h-[500px]">
+            <img src="../assets/images/404page.png" alt="404" />
+          </div>
+
+          <div class="flex flex-col text-center w-full mb-8">
+            <h1
+              class="text-[40px] text-content-900 font-semibold leading-[1.2]">
+              Oops! page not found
+            </h1>
+            <p class="text-content-500 leading-[1.5] mt-5 mb-6">
+              Ut consequat ac tortor eu vehicula. Aenean accumsan purus eros.
+              Maecenas sagittis tortor at metus mollis
+            </p>
+            <div class="flex justify-center">
+              <button
+                class="px-8 py-[14px] w-[200px] rounded-full bg-success text-white text-sm font-medium leading-[1.2]">
+                Back to home
+              </button>
+            </div>
+          </div>
+        </main>
+
+        <footer class="footer"></footer>
+      </div>
+    </div>
+
+    <script type="module" src="../../src/service/blog.js"></script>
+  </body>
+</html>

@@ -11,6 +11,61 @@
       "dateCreated": "6/10/2023",
       "dateUpdate": "8/10/2023",
       "userIdData": "1"
+    },
+    {
+      "id": 2,
+      "username": "mtcute",
+      "password": "123456",
+      "fullname": "Mỹ Tiên",
+      "address": "Thảo Điền, Quận 2",
+      "phone": "0906757332",
+      "role": "customer",
+      "dateCreated": "17/10/2023",
+      "dateUpdate": "null"
+    },
+    {
+      "id": 3,
+      "username": "mt123",
+      "password": "123456",
+      "fullname": "null",
+      "address": "null",
+      "phone": "null",
+      "role": "customer",
+      "dateCreated": "17/10/2023",
+      "dateUpdate": "null"
+    },
+    {
+      "id": 4,
+      "username": "buonnhuconmeo",
+      "password": "123456",
+      "fullname": "null",
+      "address": "null",
+      "phone": "null",
+      "role": "customer",
+      "dateCreated": "17/10/2023",
+      "dateUpdate": "null"
+    },
+    {
+      "id": 5,
+      "username": "buonnhuconca",
+      "password": "123456",
+      "fullname": "null",
+      "address": "null",
+      "phone": "null",
+      "role": "customer",
+      "dateCreated": "17/10/2023",
+      "dateUpdate": "null"
+    },
+    {
+      "id": 6,
+      "username": "test123",
+      "password": "123456",
+      "fullname": "null",
+      "address": "null",
+      "phone": "null",
+      "role": "customer",
+      "dateCreated": "17/10/2023",
+      "dateUpdate": "null"
     }
   ],
   "products": [
@@ -24,6 +79,7 @@
       "images": "../../assets/images/products/apple.png",
       "description": "everything...",
       "sold": "25",
+      "views": 100,
       "dateCreated": "2/10/2023",
       "dateUpdate": ""
     },
@@ -37,6 +93,7 @@
       "images": "../../assets/images/products/lettuce.png",
       "description": "everything...",
       "sold": "33",
+      "views": 100,
       "dateCreated": "2/10/2023",
       "dateUpdate": ""
     },
@@ -44,12 +101,13 @@
       "id": 3,
       "name": "Tomato",
       "price": 50000,
-      "prince_sale": 4000,
+      "prince_sale": 20000,
       "quantity": 100,
       "category": "fresh fruit",
-      "images": "../../assets/images/products/tomato.png",
+      "images": "../../assets/images/products/tomato.jpg",
       "description": "everything...",
       "sold": "47",
+      "views": 200,
       "dateCreated": "2/10/2023",
       "dateUpdate": ""
     },
@@ -57,25 +115,68 @@
       "id": 4,
       "name": "Eggplant",
       "price": 14000,
-      "prince_sale": 4000,
-      "quantity": 100,
+      "quantity": 300,
       "category": "vegetable",
-      "images": "../../assets/images/products/eggplant.png",
+      "images": "../../assets/images/products/eggplant.jpg",
       "description": "everything...",
       "sold": "64",
+      "views": 300,
       "dateCreated": "2/10/2023",
-      "dateUpdate": ""
+      "dateUpdate": "12/10/2023"
     },
     {
       "id": 5,
       "name": "Green chill",
-      "price": "32000",
-      "prince_sale": "4000",
-      "quantity": "200",
+      "price": 32000,
+      "prince_sale": 2000,
+      "quantity": 200,
       "category": "fresh fruit",
       "images": "../../assets/images/products/chill.png",
       "description": "everything...",
       "sold": "72",
+      "views": 400,
+      "dateCreated": "2/10/2023",
+      "dateUpdate": "9/10/2023"
+    },
+    {
+      "id": 6,
+      "name": "Fresh Mongo",
+      "price": 32000,
+      "prince_sale": 2000,
+      "quantity": 200,
+      "category": "fresh fruit",
+      "images": "../../assets/images/products/mango.jpg",
+      "description": "everything...",
+      "sold": "72",
+      "views": 500,
+      "dateCreated": "2/10/2023",
+      "dateUpdate": "9/10/2023"
+    },
+    {
+      "id": 7,
+      "name": "Red chill",
+      "price": 32000,
+      "prince_sale": 2000,
+      "quantity": 200,
+      "category": "fresh fruit",
+      "images": "../../assets/images/products/redChill.jpg",
+      "description": "everything...",
+      "sold": "72",
+      "views": 600,
+      "dateCreated": "2/10/2023",
+      "dateUpdate": "9/10/2023"
+    },
+    {
+      "id": 8,
+      "name": "Fresh Cauliflower",
+      "price": 32000,
+      "prince_sale": 2000,
+      "quantity": 200,
+      "category": "fresh fruit",
+      "images": "../../assets/images/products/cauliflower.jpg",
+      "description": "everything...",
+      "sold": "72",
+      "views": 700,
       "dateCreated": "2/10/2023",
       "dateUpdate": "9/10/2023"
     }
@@ -121,8 +222,6 @@
     {
       "id": 1,
       "customer": "trunghieu123",
-      "coupon": "HELLO2023",
-      "shipping": 20000,
       "totalMoney": 650000,
       "paymentMethod": "Cash",
       "dateCreated": "2/10/2023",
@@ -131,8 +230,6 @@
     {
       "id": 2,
       "customer": "trunghieu456",
-      "coupon": "HELLO2023",
-      "shipping": 20000,
       "totalMoney": 1650000,
       "paymentMethod": "Bank",
       "dateCreated": "2/10/2023",
@@ -141,8 +238,6 @@
     {
       "id": 3,
       "customer": "trunghieu789",
-      "coupon": "HELLO2023",
-      "shipping": 20000,
       "totalMoney": 550000,
       "paymentMethod": "Cash",
       "dateCreated": "2/10/2023",
@@ -151,8 +246,6 @@
     {
       "id": 4,
       "customer": "trunghieu159",
-      "coupon": "HELLO2023",
-      "shipping": 20000,
       "totalMoney": 250000,
       "paymentMethod": "Bank",
       "dateCreated": "2/10/2023",
@@ -161,13 +254,33 @@
     {
       "id": 5,
       "customer": "trunghieu357",
-      "coupon": "HELLO2023",
-      "shipping": 20000,
       "totalMoney": 850000,
       "paymentMethod": "Cash",
       "dateCreated": "2/10/2023",
       "status": "Cancel"
+    },
+    {
+      "id": 6,
+      "customer": "Mỹ Tiên",
+      "totalMoney": "$5770",
+      "paymentMethod": "amazon",
+      "dateCreated": "19/10/2023",
+      "status": "not delivery"
+    },
+    {
+      "id": 7,
+      "customer": "Mỹ Tiên",
+      "phone": "0906757332",
+      "address": "Thảo Điền, Quận 2",
+      "notes": "giao lúc 12h",
+      "totalMoney": "$180",
+      "paymentMethod": "paypal",
+      "dateCreated": "20/10/2023",
+      "status": "not delivery"
     }
+  ],
+  "detail_bill": [
+    
   ],
   "blogs": [
     {
@@ -211,8 +324,9 @@
       "category": "Healthy Eating",
       "views": 563,
       "comments": 650,
-      "thumbnail": "../../assets/images/latest-news/Image4.jpg",
-      "dateCreated": "2/10/2023"
+      "thumbnail": "../../assets/images/latest-news/Image5.jpg",
+      "dateCreated": "2/10/2023",
+      "dateUpdate": "12/10/2023"
     },
     {
       "id": 5,

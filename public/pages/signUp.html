@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organic eCommerce</title>
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon/favicon-shop.png"
+      type="image/x-icon" />
+    <!-- Link css tailwind -->
+    <link rel="stylesheet" href="../output.css" />
+    <!-- Link library submit notification -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </head>
+  <body>
+    <div id="root">
+      <header id="header"></header>
+
+      <main>
+        <!-- Login -->
+        <div id="layoutLogin" class="relative hidden">
+          <img
+            class="h-[120px] w-full object-cover"
+            src="../assets/images/banners/Banner4.png"
+            alt="thumbnail" />
+
+          <!-- Link -->
+          <div
+            class="flex flex-row items-center gap-4 absolute top-[48px] left-[200px] w-[100px]">
+            <a href="../index.html">
+              <svg
+                class="flex basis-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none">
+                <path
+                  d="M4.00012 10L12.0001 3L20.0001 10V20H15.0001V16C15.0001 15.2044 14.6841 14.4413 14.1214 13.8787C13.5588 13.3161 12.7958 13 12.0001 13C11.2045 13 10.4414 13.3161 9.8788 13.8787C9.31619 14.4413 9.00012 15.2044 9.00012 16V20H4.00012V10Z"
+                  stroke="#808080"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+
+            <svg
+              class="basis-1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="6"
+              height="10"
+              viewBox="0 0 6 10"
+              fill="none">
+              <path
+                d="M1 0.916341L5.08333 4.99967L1 9.08301"
+                stroke="#999999"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+
+            <a class="text-success leading-[1.5] basis-1" href="./signIn.html"
+              >Login</a
+            >
+          </div>
+
+          <div
+            class="w-full h-[500px] flex justify-center items-center animate-formLogin">
+            <form
+              id="formLogin"
+              class="w-[520px] h-[370px] p-6 shadow-[0_0_56px_0_rgba(0,38,3,0.08)] border border-[#F2F2F2] rounded-lg">
+              <div>
+                <!-- Title -->
+                <div class="flex justify-center mb-5">
+                  <h1
+                    class="text-[32px] text-content-900 font-semibold leading-[1.2] mx-auto">
+                    Sign In
+                  </h1>
+                </div>
+
+                <!-- Username input -->
+                <div class="relative mb-6">
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    class="input w-full peer/input rounded-md ring-1 outline-none border-0 ring-content-100 ring-inset text-content-400 leading-[1.3] px-4 py-3 focus:ring-2 focus:ring-success hover:ring-success transition-all 0.2s ease-linear" />
+
+                  <label
+                    for="username"
+                    class="input-text absolute left-4 top-1/2 -translate-y-1/2 px-2 text-content-400 transition-all 0.5s ease-linear"
+                    >username</label
+                  >
+                </div>
+
+                <!-- Password input -->
+                <div class="relative mb-4">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="input w-full peer/input rounded-md ring-1 outline-none border-0 ring-content-100 ring-inset text-content-400 leading-[1.3] px-4 py-3 focus:ring-2 focus:ring-success hover:ring-success transition-all 0.2s ease-linear" />
+
+                  <label
+                    for="password"
+                    class="input-text absolute left-4 top-1/2 -translate-y-1/2 px-2 text-content-400 transition-all 0.5s ease-linear"
+                    >password</label
+                  >
+                </div>
+
+                <!-- Checkbox input -->
+                <div
+                  class="flex items-center justify-between w-full text-content-600 text-sm leading-[1.5] mb-5">
+                  <!-- remember me -->
+                  <div class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="inline-block w-5 h-5 rounded-lg" />
+                    <span class="ml-4">Remember me</span>
+                  </div>
+                  <!-- forget password -->
+                  <div>
+                    <a href="#">Forget password</a>
+                  </div>
+                </div>
+
+                <!-- Button login -->
+                <div class="w-full mb-5">
+                  <button
+                    type="submit"
+                    class="w-full bg-success hover:bg-opacity-75 px-8 py-[14px] text-sm text-white font-semibold rounded-full">
+                    Login
+                  </button>
+                </div>
+
+                <!-- Register -->
+                <div class="w-full text-center">
+                  <p class="text-sm leading-[1.5]">
+                    <span class="text-content-600">Don’t have account?</span>
+                    <a
+                      id="link_register"
+                      href="#"
+                      class="font-medium text-content-900"
+                      >Register</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Register -->
+        <div id="layoutRegister" class="relative">
+          <img
+            class="h-[120px] w-full object-cover"
+            src="../assets/images/banners/Banner4.png"
+            alt="thumbnail" />
+
+          <!-- Link -->
+          <div
+            class="flex flex-rows-5 items-center gap-4 absolute top-[48px] left-[200px] w-[300px]">
+            <a href="../index.html">
+              <svg
+                class="flex basis-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none">
+                <path
+                  d="M4.00012 10L12.0001 3L20.0001 10V20H15.0001V16C15.0001 15.2044 14.6841 14.4413 14.1214 13.8787C13.5588 13.3161 12.7958 13 12.0001 13C11.2045 13 10.4414 13.3161 9.8788 13.8787C9.31619 14.4413 9.00012 15.2044 9.00012 16V20H4.00012V10Z"
+                  stroke="#808080"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+
+            <svg
+              class="basis-1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="6"
+              height="10"
+              viewBox="0 0 6 10"
+              fill="none">
+              <path
+                d="M1 0.916341L5.08333 4.99967L1 9.08301"
+                stroke="#999999"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+
+            <a class="text-success leading-[1.5] basis-2/5" href="#"
+              >Create Account</a
+            >
+          </div>
+
+          <div
+            class="w-full h-[500px] flex justify-center items-center animate-formRegister">
+            <form
+              id="formRegister"
+              class="w-[520px] h-[420px] p-4 shadow-[0_0_56px_0_rgba(0,38,3,0.08)] border border-[#F2F2F2] rounded-lg">
+              <div>
+                <!-- Title -->
+                <div class="flex justify-center mb-5">
+                  <h1
+                    class="text-[32px] text-content-900 font-semibold leading-[1.2] mx-auto">
+                    Create Account
+                  </h1>
+                </div>
+
+                <!-- Username input -->
+                <div class="relative mb-4">
+                  <input
+                    type="text"
+                    name="usernameRg"
+                    id="usernameRg"
+                    class="input w-full peer/input rounded-md ring-1 outline-none border-0 ring-content-100 ring-inset text-content-400 leading-[1.3] px-4 py-3 focus:ring-2 focus:ring-success hover:ring-success transition-all 0.2s ease-linear" />
+
+                  <label
+                    for="usernameRg"
+                    class="input-text absolute left-4 top-1/2 -translate-y-1/2 px-2 text-content-400 transition-all 0.5s ease-linear"
+                    >username</label
+                  >
+                </div>
+
+                <!-- Password input -->
+                <div class="relative mb-4">
+                  <input
+                    type="password"
+                    name="passwordRg"
+                    id="passwordRg"
+                    class="input w-full peer/input rounded-md ring-1 outline-none border-0 ring-content-100 ring-inset text-content-400 leading-[1.3] px-4 py-3 focus:ring-2 focus:ring-success hover:ring-success transition-all 0.2s ease-linear" />
+
+                  <label
+                    for="passwordRg"
+                    class="input-text absolute left-4 top-1/2 -translate-y-1/2 px-2 text-content-400 transition-all 0.5s ease-linear"
+                    >password</label
+                  >
+                </div>
+
+                <!-- Confirm password -->
+                <div class="relative mb-4">
+                  <input
+                    type="password"
+                    name="cfpasswordRg"
+                    id="cfpasswordRg"
+                    class="input w-full peer/input rounded-md ring-1 outline-none border-0 ring-content-100 ring-inset text-content-400 leading-[1.3] px-4 py-3 focus:ring-2 focus:ring-success hover:ring-success transition-all 0.2s ease-linear" />
+
+                  <label
+                    for="cfpasswordRg"
+                    class="input-text absolute left-4 top-1/2 -translate-y-1/2 px-2 text-content-400 transition-all 0.5s ease-linear"
+                    >confirm password</label
+                  >
+                </div>
+
+                <!-- Checkbox input -->
+                <div
+                  class="flex items-center justify-between w-full text-content-600 text-sm leading-[1.5] mb-5">
+                  <!-- remember me -->
+                  <div class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="inline-block w-5 h-5 rounded-lg" />
+                    <span class="ml-4">Accept all terms & Conditions</span>
+                  </div>
+                </div>
+
+                <!-- Button login -->
+                <div class="w-full mb-5">
+                  <button
+                    id="btnRegister"
+                    type="submit"
+                    class="w-full bg-success hover:bg-opacity-75 px-8 py-[14px] text-sm text-white font-semibold rounded-full">
+                    Create Account
+                  </button>
+                </div>
+
+                <!-- Register -->
+                <div class="w-full text-center">
+                  <p class="text-sm leading-[1.5]">
+                    <span class="text-content-600">Already have account</span>
+                    <a
+                      id="link_login"
+                      href="#"
+                      class="font-medium text-content-900"
+                      >Login</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer"></footer>
+    </div>
+
+    <script type="module" src="../../src/service/signin.js"></script>
+  </body>
+</html>
