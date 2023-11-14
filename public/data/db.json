@@ -205,17 +205,15 @@
     },
     {
       "id": 4,
-      "name": "Snacks",
+      "name": "Fast Food 2",
       "quantity": 63,
       "dateCreated": "2/10/2023",
       "dateUpdate": ""
     },
     {
-      "id": 5,
-      "name": "Cooking",
-      "quantity": 55,
+      "name": "Fast Food",
       "dateCreated": "2/10/2023",
-      "dateUpdate": ""
+      "id": 5
     }
   ],
   "bills": [
@@ -279,9 +277,7 @@
       "status": "not delivery"
     }
   ],
-  "detail_bill": [
-    
-  ],
+  "detail_bill": [],
   "blogs": [
     {
       "id": 1,
